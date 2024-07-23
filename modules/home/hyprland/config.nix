@@ -293,6 +293,6 @@
 
     };
 
-    extraConfig = import (./../../../hosts/${host}/screens.nix);
+    extraConfig = builtins.import ./../../../hosts/${host}/screens.nix;
   };
 }
