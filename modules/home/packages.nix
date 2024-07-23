@@ -32,6 +32,9 @@
     winetricks
     wineWowPackages.wayland
 
+    obsidian
+    
+
     # C / C++
     gcc
     gnumake
