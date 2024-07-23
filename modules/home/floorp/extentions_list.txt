@@ -6,3 +6,4 @@ Firefox Color                   # catppuccin
 Dark Reader                     # theme dracula
 I don't care about cookies
 ClearURLs
+Nordpass

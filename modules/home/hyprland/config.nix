@@ -1,4 +1,4 @@
-{ ... }: 
+{ host, ... }: 
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -293,12 +293,6 @@
 
     };
 
-    extraConfig = "
-      monitor=,preferred,auto,auto
-
-      xwayland {
-        force_zero_scaling = true
-      }
-    ";
+    extraConfig = import (./../../../hosts/${host}/screens.nix);
   };
 }
