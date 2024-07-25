@@ -31,7 +31,7 @@
       };
 
       general = {
-        "$mainMod" = "SUPER";
+        "$mainMod" = "ALT";
         layout = "dwindle";
         gaps_in = 0;
         gaps_out = 0;
@@ -293,6 +293,7 @@
 
     };
 
+    # Import extraConfig from host-specific folder -> Screen setup is different between hosts
     extraConfig = builtins.import ./../../../hosts/${host}/screens.nix;
   };
 }
