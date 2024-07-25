@@ -13,6 +13,5 @@
     ++ [ (import ./user.nix) ]
     ++ [ (import ./wayland.nix) ]
     ++ [ (import ./virtualization.nix) ]
-    ++ [ (import ./steam.nix)] 
-    ++ [ (import ./lutris.nix)];
+    ++ [ (import ./steam.nix)]; 
 }
