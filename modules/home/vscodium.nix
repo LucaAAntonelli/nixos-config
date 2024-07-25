@@ -10,15 +10,22 @@
       arrterian.nix-env-selector
       # python
       ms-python.python
-      # C/C++
-      ms-vscode.cpptools
-
+      
+      # Rust
       rust-lang.rust-analyzer
+      fill-labs.dependi
+      tamasfe.even-better-toml
+
+
       usernamehw.errorlens
+      vscodevim.vim
+      tomoki1207.pdf
 
       # Color theme
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+      pkief.material-icon-theme
+      jdinhlife.gruvbox
     ];
     userSettings = {
       "update.mode" = "none";
