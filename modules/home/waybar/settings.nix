@@ -14,6 +14,7 @@
     ];
     modules-center= [
         "clock"
+        "bluetooth"
     ];
     modules-right= [
         "tray" 
@@ -25,6 +26,16 @@
         "network"
         "custom/notification"
     ];
+    bluetooth= {
+        format-on = "󰂯";
+        format-off = "󰂲";
+        format-connected = "󰂱";
+        tooltip-format-on = "Not Connected";
+        tooltip-format-off = "Disabled";
+        tooltip-format-connected = "{device_enumerate}";
+        on-click = "sh -c 'if bluetoothctl show | grep -q \"Powered: yes\"; then bluetoothctl power off; else bluetoothctl power on; fi'";
+        tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+    };
     clock= {
         calendar = {
           format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
