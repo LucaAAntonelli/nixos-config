@@ -12,8 +12,9 @@
       ms-python.python
       # C/C++
       ms-vscode.cpptools
-      # OCaml
-      ocamllabs.ocaml-platform
+
+      rust-lang.rust-analyzer
+      usernamehw.errorlens
 
       # Color theme
       catppuccin.catppuccin-vsc
@@ -34,7 +35,7 @@
       "vsicons.dontShowNewVersionMessage" = true;
       "explorer.confirmDragAndDrop" = false;
       "editor.fontLigatures" = true;
-      "editor.minimap.enabled" = false;
+      "editor.minimap.enabled" = true;
       "workbench.startupEditor" = "none";
 
       "editor.formatOnSave" = true;
@@ -45,13 +46,13 @@
       "workbench.editor.limit.enabled" = true;
       "workbench.editor.limit.value" = 10;
       "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "single";
+      "workbench.editor.showTabs" = "multiple";
       "files.autoSave" = "onWindowChange";
       "explorer.openEditors.visible" = 0;
       "breadcrumbs.enabled" = false;
       "editor.renderControlCharacters" = false;
-      "workbench.activityBar.location" = "hidden";
-      "workbench.statusBar.visible" = false;
+      "workbench.activityBar.location" = "default";
+      "workbench.statusBar.visible" = true;
       "editor.scrollbar.verticalScrollbarSize" = 2;
       "editor.scrollbar.horizontalScrollbarSize" = 2;
       "editor.scrollbar.vertical" = "hidden";
