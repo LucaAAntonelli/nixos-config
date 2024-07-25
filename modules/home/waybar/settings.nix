@@ -87,7 +87,8 @@
     network = {
         format-wifi = "  {signalStrength}%";
         format-ethernet = "󰀂 ";
-        tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
+        tooltip-format-disconnected = "Disconnected";
+        tooltip-format = "Connected to {essid}";
         format-linked = "{ifname} (No IP)";
         format-disconnected = "󰖪 ";
     };
