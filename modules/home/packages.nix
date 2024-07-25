@@ -33,6 +33,7 @@
     wineWowPackages.wayland
 
     obsidian
+    dust
     
 
     # C / C++
