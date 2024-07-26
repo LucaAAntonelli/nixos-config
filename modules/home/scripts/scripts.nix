@@ -18,7 +18,6 @@
   
   show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
   
-  vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
 
   ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
   
@@ -44,7 +43,6 @@ in {
     
     show-keybinds
 
-    vm-start
 
     ascii
 
