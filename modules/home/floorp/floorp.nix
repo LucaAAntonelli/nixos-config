@@ -1,4 +1,7 @@
 { pkgs, ... }: 
 {
-  home.packages = (with pkgs; [ floorp ]);
+  programs.firefox = {
+    enable = true;
+    package = pkgs.floorp;
+  };
 }
