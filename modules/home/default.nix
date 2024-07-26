@@ -1,7 +1,6 @@
 {inputs, username, host, ...}: {
   imports =
-       [(import ./audacious/audacious.nix)]       # music player
-    ++ [(import ./bat.nix)]                       # better cat command
+     [(import ./bat.nix)]                       # better cat command
     ++ [(import ./btop.nix)]                      # resouces monitor 
     ++ [(import ./cava.nix)]                      # audio visualizer
     ++ [(import ./discord.nix)]                   # discord with catppuccin theme
@@ -16,7 +15,6 @@
     ++ [(import ./micro.nix)]                     # nano replacement
     ++ [(import ./nvim.nix)]                      # neovim editor
     ++ [(import ./packages.nix)]                  # other packages
-    ++ [(import ./retroarch.nix)]
     ++ [(import ./scripts/scripts.nix)]           # personal scripts
     ++ [(import ./spicetify.nix)]                 # spotify client
     ++ [(import ./starship.nix)]                  # shell prompt
