@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    owncloud-client
   ];
 
   time.timeZone = "Europe/Zurich";

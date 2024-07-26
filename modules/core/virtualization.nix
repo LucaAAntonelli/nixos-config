@@ -12,7 +12,6 @@
     win-virtio
     win-spice
     adwaita-icon-theme
-    owncloud-client
   ];
 
   # Manage the virtualisation services
