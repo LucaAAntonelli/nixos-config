@@ -63,7 +63,7 @@ set_username() {
 }
 
 get_host() {
-    echo -en "Choose a ${GREEN}host${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop or [${YELLOW}V${NORMAL}]irtual machine: "
+    echo -en "Choose a ${GREEN}host${NORMAL} - [${YELLOW}D${NORMAL}]esktop or [${YELLOW}L${NORMAL}]aptop: "
     read -n 1 -r
     echo
 
@@ -71,10 +71,8 @@ get_host() {
         HOST='desktop'
     elif [[ $REPLY =~ ^[Ll]$ ]]; then
         HOST='laptop'
-     elif [[ $REPLY =~ ^[Vv]$ ]]; then
-        HOST='vm'
     else
-        echo "Invalid choice. Please select 'D' for desktop, 'L' for laptop or 'V' for virtual machine."
+        echo "Invalid choice. Please select 'D' for desktop or 'L' for laptop"
         exit 1
     fi
     
@@ -89,10 +87,8 @@ install() {
 
     # Create basic directories
     echo -e "Creating folders:"
-    echo -e "    - ${MAGENTA}~/Music${NORMAL}"
     echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
     echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
-    mkdir -p ~/Music
     mkdir -p ~/Documents
     mkdir -p ~/Pictures/wallpapers/others
     sleep 0.2
