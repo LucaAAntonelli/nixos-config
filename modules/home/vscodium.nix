@@ -66,6 +66,7 @@
       "editor.mouseWheelZoom" = true;
 
       "git.enableSmartCommit" = true; # Automatically stage all changes when committing
+      "git.confirmSync" = false; # Don't ask for confirmation upon pushing changes
 
 
     };
