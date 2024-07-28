@@ -29,7 +29,7 @@
         min_time_to_notify = 60000;
       };        
 
-      palette = "catppuccin_mocha";
-    } // builtins.fromTOML (builtins.readFile "${inputs.catppuccin-starship}/palettes/mocha.toml");
+      palette = "gruvbox-dark";
+    } // builtins.fromTOML (builtins.readFile "${inputs.gruvbox-starship}/starship.toml");
   };
 }

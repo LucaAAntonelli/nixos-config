@@ -23,14 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin-cava = {
-      url = "github:catppuccin/cava";
+    gruvbox-starship = {
+      url = "github:fang2hou/starship-gruvbox-rainbow";
       flake = false;
     };
-    catppuccin-starship = {
-      url = "github:catppuccin/starship";
-      flake = false;
-    };
+
 
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";

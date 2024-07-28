@@ -21,22 +21,6 @@
         "type": "github"
       }
     },
-    "catppuccin-cava": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1716595578,
-        "narHash": "sha256-1+CCUaf8U/NH/eHuYRbQo8inbhSMJ3vji6UH52hrF1s=",
-        "owner": "catppuccin",
-        "repo": "cava",
-        "rev": "6ec25ba688e30f3e5d6004ef6a295e6ba90c64d4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "cava",
-        "type": "github"
-      }
-    },
     "catppuccin-starship": {
       "flake": false,
       "locked": {
@@ -122,6 +106,22 @@
       "original": {
         "owner": "edolstra",
         "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "gruvbox-starship": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690123456,
+        "narHash": "sha256-7gFkssVcPe5PD+BD1JgXnJndN6N+EBwzjU4AnhoV/Ws=",
+        "owner": "fang2hou",
+        "repo": "starship-gruvbox-rainbow",
+        "rev": "c1632151c16daec35aff2a066025bd992c880952",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fang2hou",
+        "repo": "starship-gruvbox-rainbow",
         "type": "github"
       }
     },
@@ -515,8 +515,8 @@
     "root": {
       "inputs": {
         "alejandra": "alejandra",
-        "catppuccin-cava": "catppuccin-cava",
         "catppuccin-starship": "catppuccin-starship",
+        "gruvbox-starship": "gruvbox-starship",
         "home-manager": "home-manager",
         "hypr-contrib": "hypr-contrib",
         "hyprland": "hyprland",
