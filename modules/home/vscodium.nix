@@ -65,6 +65,9 @@
 
       "editor.mouseWheelZoom" = true;
 
+      "git.enableSmartCommit" = true; # Automatically stage all changes when committing
+
+
     };
     # Keybindings
     keybindings = [
