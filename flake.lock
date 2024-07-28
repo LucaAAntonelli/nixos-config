@@ -21,22 +21,6 @@
         "type": "github"
       }
     },
-    "catppuccin-starship": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1716565281,
-        "narHash": "sha256-KzXO4dqpufxTew064ZLp3zKIXBwbF8Bi+I0Xa63j/lI=",
-        "owner": "catppuccin",
-        "repo": "starship",
-        "rev": "ca2fb0600730fd3958a2cb4d4ca97c401877b365",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "starship",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -515,7 +499,6 @@
     "root": {
       "inputs": {
         "alejandra": "alejandra",
-        "catppuccin-starship": "catppuccin-starship",
         "gruvbox-starship": "gruvbox-starship",
         "home-manager": "home-manager",
         "hypr-contrib": "hypr-contrib",
