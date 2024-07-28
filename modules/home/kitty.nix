@@ -3,8 +3,8 @@
   programs.kitty = {
     enable = true;
 
-    theme = "Catppuccin-Mocha";
-    
+    theme = "Gruvbox Dark";
+
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 13;
