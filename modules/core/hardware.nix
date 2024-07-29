@@ -13,4 +13,6 @@
     };
   };
   hardware.enableRedistributableFirmware = true;
+
+  hardware.opengl.enable = true;
 }
