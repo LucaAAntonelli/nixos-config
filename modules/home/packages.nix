@@ -13,7 +13,7 @@
     gimp
     gtrash                            # rm replacement, put deleted files in system trash
     hexdump
-    jdk17                             # java
+    jdk8                              # legacy java version for Minecraft
     lazygit
     libreoffice
     cinnamon.nemo-with-extensions     # file manager
