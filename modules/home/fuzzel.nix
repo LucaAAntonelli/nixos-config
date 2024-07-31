@@ -9,7 +9,7 @@
         fields = "name,generic,comment,categories,filename,keywords";
         terminal = "kitty";
         prompt = "' ➜  '" ;
-        icon-theme = "Papirus-Dark";
+        icon-theme = "oomox-gruvbox-dark";
         layer = "top";
         lines = 10;
         width = 35;

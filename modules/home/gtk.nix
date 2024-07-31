@@ -15,11 +15,8 @@
       size = 11;
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
+      name = "oomox-gruvbox-dark";
+      package = pkgs.gruvbox-dark-icons-gtk;
     };
     theme = {
       name = "gruvbox-dark";
