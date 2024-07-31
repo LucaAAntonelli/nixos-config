@@ -2,17 +2,17 @@
 {
   home.packages = [ pkgs.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
-    $red = rgb(f38ba8)
-    $yellow = rgb(f9e2af)
-    $lavender = rgb(b4befe)
+    $red = rgb(cc241d)
+    $yellow = rgb(d79921)
+    $lavender = rgb(458588)
 
-    $mauve = rgb(cba6f7)
-    $mauveAlpha = cba6f7
+    $mauve = rgb(b16286)
+    $mauveAlpha = b16286
 
     $base = rgb(1e1e2e)
     $surface0 = rgb(313244)
-    $text = rgb(cdd6f4)
-    $textAlpha = cdd6f4
+    $text = rgb(fbf1c7)
+    $textAlpha = fbf1c7
 
     $accent = $lavender
     $accentAlpha = $mauveAlpha
@@ -27,7 +27,7 @@
     # BACKGROUND
     background {
       monitor =
-      path = ~/Pictures/wallpapers/others/cat-leaves.png
+      path = ~/Pictures/wallpapers/others/lock-screen.png
       color = $base
       blur_passes = 0
     }

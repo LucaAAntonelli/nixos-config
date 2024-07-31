@@ -17,21 +17,21 @@
       effect-pixelate = 5;
       
       color="1e1e2e";
-      bs-hl-color="f5e0dc";
-      key-hl-color="a6e3a1";
-      caps-lock-bs-hl-color="f5e0dc";
-      caps-lock-key-hl-color="a6e3a1";
-      ring-color="b4befe";
-      ring-clear-color="f5e0dc";
-      ring-caps-lock-color="fab387";
-      ring-ver-color="89b4fa";
-      ring-wrong-color="eba0ac";
-      text-color="cdd6f4";
-      text-clear-color="f5e0dc";
-      text-caps-lock-color="fab387";
-      text-ver-color="89b4fa";
-      text-wrong-color="eba0ac";
-      layout-text-color="cdd6f4";
+      bs-hl-color="fbf1c7";
+      key-hl-color="8ec07c";
+      caps-lock-bs-hl-color="fbf1c7";
+      caps-lock-key-hl-color="8ec07c";
+      ring-color="458588";
+      ring-clear-color="fe8019";
+      ring-caps-lock-color="d65d0e";
+      ring-ver-color="83a598";
+      ring-wrong-color="d3869b";
+      text-color="928374";
+      text-clear-color="fbf1c7";
+      text-caps-lock-color="d65d0e";
+      text-ver-color="83a598";
+      text-wrong-color="d3869b";
+      layout-text-color="928374";
 
       inside-color="00000000";
       inside-clear-color="00000000";

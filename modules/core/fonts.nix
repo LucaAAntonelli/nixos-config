@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, config, ... }:
 
 {
     system.fsPackages = [ pkgs.bindfs ];
@@ -29,9 +29,7 @@
     fonts = {
         fontDir.enable = true;
         packages = with pkgs; [
-        noto-fonts
-        noto-fonts-emoji
-        noto-fonts-cjk
+        (nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
         ];
     };
 
