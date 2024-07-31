@@ -3,10 +3,10 @@ let custom = {
     font = "JetBrainsMono Nerd Font";
     font_size = "15px";
     font_weight = "bold";
-    text_color = "#cdd6f4";
-    secondary_accent= "89b4fa";
-    tertiary_accent = "f5f5f5";
-    background = "11111B";
+    text_color = "#ebdbb2";
+    secondary_accent = "#d79921";
+    tertiary_accent= "#fe8019";
+    background = "#11111B";
     opacity = "0.98";
 };
 in 
@@ -39,13 +39,13 @@ in
         padding-right: 6px;
     }
     #workspaces button.empty {
-        color: #6c7086;
+        color: #a89984;
     }
     #workspaces button.active {
-        color: #b4befe;
+        color: #ebdbb2;
     }
 
-    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery, #custom-notification {
+    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery, #custom-notification, #bluetooth {
         font-size: ${custom.font_size};
         color: ${custom.text_color};
     }
@@ -67,6 +67,21 @@ in
     #tray {
         padding: 0 20px;
         margin-left: 7px;
+    }
+
+    #tray menu {
+        font-size: ${custom.font_size};
+        color: ${custom.text_color};
+    }
+
+    #tray.passive, #tray>.passive, #tray>passive, #tray> .passive, #tray passive {
+        font-size: ${custom.font_size};
+        color: ${custom.text_color};
+    }
+
+    #tray.active, #tray>.active, #tray>active, #tray> .active, #tray active {
+        font-size: ${custom.font_size};
+        color: ${custom.text_color};
     }
 
     #pulseaudio {
@@ -95,7 +110,7 @@ in
 
     #custom-launcher {
         font-size: 20px;
-        color: #b4befe;
+        color: #ebdbb2;
         font-weight: ${custom.font_weight};
         padding-left: 10px;
         padding-right: 15px;

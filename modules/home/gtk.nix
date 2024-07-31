@@ -22,8 +22,8 @@
       };
     };
     theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
+      name = "gruvbox-dark";
+      package = pkgs.gruvbox-dark-gtk;
     };
     cursorTheme = {
       name = "Nordzy-cursors";
