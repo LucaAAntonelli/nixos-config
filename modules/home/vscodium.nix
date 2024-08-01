@@ -63,6 +63,8 @@
       "editor.scrollbar.horizontal" = "hidden";
       "workbench.layoutControl.enabled" = false;
 
+      "security.workspace.trust.untrustedFiles" = "open"; # Always trust new files/folders
+
       "editor.mouseWheelZoom" = true;
 
       "git.enableSmartCommit" = true; # Automatically stage all changes when committing
