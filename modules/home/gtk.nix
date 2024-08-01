@@ -6,6 +6,7 @@
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
     pkgs.twemoji-color-font
     pkgs.noto-fonts-emoji
+    pkgs.gruvbox-dark-icons-gtk
   ];
 
   gtk = {
@@ -15,8 +16,8 @@
       size = 11;
     };
     iconTheme = {
-      name = "oomox-gruvbox-dark";
-      package = pkgs.gruvbox-dark-icons-gtk;
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
     };
     theme = {
       name = "gruvbox-dark";
