@@ -16,7 +16,7 @@
     jdk8                              # legacy java version for Minecraft
     lazygit
     libreoffice
-    cinnamon.nemo-with-extensions     # file manager
+    nemo-with-extensions             # file manager
     nitch                             # systhem fetch util
     nix-prefetch-github
     prismlauncher                     # minecraft launcher
