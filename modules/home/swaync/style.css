@@ -1,16 +1,16 @@
-@define-color base #1E1D2E;
-@define-color mantle #181825;
-@define-color crust #11111b;
+@define-color base #282828;
+@define-color mantle #504945;
+@define-color crust #3c3836;
 
-@define-color text #cdd6f4;
-@define-color subtext0 #a6adc8;
-@define-color subtext1 #bac2de;
+@define-color text #fbf1c7;
+@define-color subtext0 #ebdbb2;
+@define-color subtext1 #d5c4a1;
 
-@define-color surface0 #313244;
-@define-color surface1 #45475a;
-@define-color surface2 #585b70;
+@define-color surface0 #3c3836;
+@define-color surface1 #665c54;
+@define-color surface2 #928374;
 
-@define-color lavender #b4befe;
+@define-color orange #fe8019;
 
 * {
     font-family: "NotoSansMono Nerd Font";
@@ -23,7 +23,7 @@ label {
 }
 
 .notification {
-    border: @lavender;
+    border: @orange;
     box-shadow: none;
     border-radius: 4px;
     background: inherit;
@@ -468,7 +468,7 @@ carouselindicatordots {
     font-size: initial;
     border-radius: 12px;
     background: @surface0;
-    border: 1px solid @lavender;
+    border: 1px solid @orange;
     box-shadow: none;
 }
 
@@ -477,7 +477,7 @@ carouselindicatordots {
 }
 
 .widget-dnd>switch slider {
-    background: @lavender;
+    background: @orange;
     border-radius: 12px;
 }
 
