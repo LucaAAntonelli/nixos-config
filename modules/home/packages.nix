@@ -1,20 +1,16 @@
 { inputs, pkgs, ... }: 
 {
   home.packages = (with pkgs; [
-    bitwise                           # cli tool for bit / hex manipulation
     evince                            # gnome pdf viewer
     eza                               # ls replacement
     entr                              # perform action when file change
     fd                                # find replacement
     file                              # Show file information 
     fzf                               # fuzzy finder
-    gtt                               # google translate TUI
     gifsicle                          # gif utility
     gimp
     gtrash                            # rm replacement, put deleted files in system trash
-    hexdump
     jdk8                              # legacy java version for Minecraft
-    lazygit
     libreoffice
     nemo-with-extensions             # file manager
     nitch                             # systhem fetch util
@@ -23,7 +19,6 @@
     ripgrep                           # grep replacement
     soundwireserver                   # pass audio to android phone
     tdf                               # cli pdf viewer
-    todo                              # cli todo list
     toipe                             # typing test in the terminal
     valgrind                          # c memory analyzer
     yazi                              # terminal file manager
@@ -35,10 +30,6 @@
     obsidian
     dust
     
-
-    # C / C++
-    gcc
-    gnumake
 
     # Python
     python3
