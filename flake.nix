@@ -17,6 +17,11 @@
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
     };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -46,6 +51,9 @@
   in
   {
     overlays.default = selfPkgs.overlay;
+
+    extraSpecialArgs = { inherit inputs; };
+
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
