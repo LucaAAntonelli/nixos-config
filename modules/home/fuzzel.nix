@@ -17,13 +17,13 @@
         inner-pad = 5;
       };
       colors = {
-        background = "1e1e2ecc";
-        text = "cdd6f4ff";
-        match = "f38ba8ff";
-        selection = "b4befeaa";
-        selection-match = "f38ba8ff";
-        selection-text = "cdd6f4ff";
-        border = "b4befeff";
+        background = "#282828cc";
+        text = "#ddc7a1cc";
+        match = "#fe8019cc";
+        selection = "#665c54cc";
+        selection-match = "#d65d0ecc";
+        selection-text = "#fbf1c7cc";
+        border = "#83a598cc";
       };
       border = {
         radius = 15;
