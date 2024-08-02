@@ -6,7 +6,7 @@
   ];
 
   powerManagement.cpuFreqGovernor = "performance";
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
 
