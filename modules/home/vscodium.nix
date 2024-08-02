@@ -38,6 +38,7 @@
       "workbench.iconTheme" = "material-icon-theme";
       "vsicons.dontShowNewVersionMessage" = true;
       "explorer.confirmDragAndDrop" = false;
+      "explorer.confirmDelete" = false;
       "editor.fontLigatures" = true;
       "editor.minimap.enabled" = true;
       "workbench.startupEditor" = "none";
