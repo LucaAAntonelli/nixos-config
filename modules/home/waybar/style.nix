@@ -51,7 +51,7 @@ in
     }
 
     #cpu {
-        padding-left: 15px;
+        padding-left: 7px;
         padding-right: 9px;
         margin-left: 7px;
     }
@@ -65,8 +65,13 @@ in
     }
 
     #tray {
-        padding: 0 20px;
+        padding: 0 10px;
         margin-left: 7px;
+    }
+
+    #bluetooth {
+        padding-left: 7px;
+        padding-right: 7px;
     }
 
     #tray menu {

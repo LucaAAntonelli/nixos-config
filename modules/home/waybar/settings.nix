@@ -14,10 +14,10 @@
     ];
     modules-center= [
         "clock"
-        "bluetooth"
     ];
     modules-right= [
         "tray" 
+        "bluetooth"
         "cpu"
         "memory"
         "disk"
@@ -70,22 +70,22 @@
         };
     };
     memory= {
-        format= "󰟜 {}%";
+        format= "󰟜 {:2}%";
         format-alt= "󰟜 {used} GiB"; # 
         interval= 2;
     };
     cpu= {
-        format= "  {usage}%";
+        format= "  {usage:2}%";
         format-alt= "  {avg_frequency} GHz";
         interval= 2;
     };
     disk = {
         # path = "/";
-        format = "󰋊 {percentage_used}%";
+        format = "󰋊 {percentage_used:2}%";
         interval= 60;
     };
     network = {
-        format-wifi = "  {signalStrength}%";
+        format-wifi = " ";
         format-ethernet = "󰀂 ";
         tooltip-format-disconnected = "Disconnected";
         tooltip-format = "Connected to {essid}";
@@ -97,8 +97,8 @@
         spacing= 8;
     };
     pulseaudio= {
-        format= "{icon} {volume}%";
-        format-muted= "  {volume}%";
+        format= "{icon} {volume:2}%";
+        format-muted= "  {volume:2}%";
         format-icons= {
             default= [" "];
         };
@@ -106,11 +106,11 @@
         on-click= "pamixer -t";
     };
     battery = {
-        format = "{icon} {capacity}%";
+        format = "{icon} {capacity:2}%";
         format-icons = [" " " " " " " " " "];
-        format-charging = " {capacity}%";
-        format-full = " {capacity}%";
-        format-warning = " {capacity}%";
+        format-charging = " {capacity:2}%";
+        format-full = " {capacity:2}%";
+        format-warning = " {capacity:2}%";
         interval = 5;
         states = {
             warning = 20;
