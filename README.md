@@ -1,7 +1,7 @@
 <h1 align="center">
    <img src="./.github/assets/logo/nixos-logo.png  " width="100px" /> 
    <br>
-      Frost-Phoenix's Flakes 
+      LucaAAntonelli's Flakes 
    <br>
       <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
    <div align="center">
@@ -9,16 +9,16 @@
    <div align="center">
       <p></p>
       <div align="center">
-         <a href="https://github.com/Frost-Phoenix/nixos-config/stargazers">
-            <img src="https://img.shields.io/github/stars/Frost-Phoenix/nixos-config?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
+         <a href="https://github.com/LucaAAntonelli/nixos-config/stargazers">
+            <img src="https://img.shields.io/github/stars/LucaAAntonelli/nixos-config?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
          </a>
-         <a href="https://github.com/Frost-Phoenix/nixos-config/">
-            <img src="https://img.shields.io/github/repo-size/Frost-Phoenix/nixos-config?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
+         <a href="https://github.com/LucaAAntonelli/nixos-config/">
+            <img src="https://img.shields.io/github/repo-size/LucaAAntonelli/nixos-config?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
          </a>
          <a = href="https://nixos.org">
             <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
          </a>
-         <a href="https://github.com/Frost-Phoenix/nixos-config/blob/main/LICENSE">
+         <a href="https://github.com/LucaAAntonelli/nixos-config/blob/main/LICENSE">
             <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=313244&colorB=F5A97F&logo=unlicense&logoColor=F5A97F&"/>
          </a>
       </div>
@@ -77,9 +77,9 @@ OLD (EXPAND)
 | **System resource monitor** | [Btop][Btop] |
 | **File Manager**            | [nemo][nemo] + [yazi][yazi] |
 | **Fonts**                   | [Nerd fonts][Nerd fonts] |
-| **Color Scheme**            | [Catppuccin][Catppuccin] |
+| **Color Scheme**            | [Gruvbox-Dark][Gruvbox-Dark] |
 | **Cursor**                  | [Nordzy-cursors][Nordzy-cursors] |
-| **Icons**                   | [catppuccin-papirus-folders][catppuccin-papirus-folders] |
+| **Icons**                   | [Gruvbox-Icons-Plus][Gruvbox-Icons-Plus] |
 | **Lockscreen**              | [Swaylock-effects][Swaylock-effects] |
 | **Image Viewer**            | [imv][imv] |
 | **Media Player**            | [mpv][mpv] |
@@ -366,7 +366,7 @@ Mouse binding
 
    ```
    nix-shell -p git
-   git clone https://github.com/Frost-Phoenix/nixos-config
+   git clone https://github.com/LucaAAntonelli/nixos-config
    cd nixos-config
    ```
 3. **Install script**
@@ -381,8 +381,8 @@ Mouse binding
    ```
       programs.git = {
          ...
-         userName = "Frost-Phoenix";
-         userEmail = "67cyril6767@gmail.com";
+         userName = "LucaAAntonelli";
+         userEmail = "luca.antonelli@gmx.ch";
          ...
       };
    ```
@@ -393,7 +393,6 @@ Mouse binding
 5. **Manual config**
 
    Even though I use home manager, there is still a little bit of manual configuration to do:
-      - Set Aseprite theme (they are in the folder `./nixos-config/modules/home/aseprite/themes`).
       - Enable Discord theme (in Discord settings under VENCORD > Themes).
       - Configure the browser (for now, all browser configuration is done manually).
 
@@ -450,9 +449,7 @@ Other dotfiles that I learned / copy from:
   - [Ruixi-rebirth/flakes](https://github.com/Ruixi-rebirth/flakes)
 
 
-<!-- # ✨ Stars History -->
 
-<!-- <p align="center"><img src="https://api.star-history.com/svg?repos=frost-phoenix/nixos-config&type=Timeline&theme=dark" /></p> -->
 
 <p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
 
