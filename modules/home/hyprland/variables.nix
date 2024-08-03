@@ -24,6 +24,9 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "gruvbox-dark";
+    XCURSOR_THEME = "Nordzy-cursors";
     XCURSOR_SIZE = "22";
+    HYPRCURSOR_THEME = "Nordzy-cursors";
+    HYPRCURSOR_SIZE = "22";
   };
 }

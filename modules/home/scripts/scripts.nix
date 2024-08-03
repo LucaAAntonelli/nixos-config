@@ -9,7 +9,7 @@
   toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
   toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
 
- offload = pkgs.writeShellScriptbin "offload" (builtins.readFile ./scripts/offload.sh);
+  offload = pkgs.writeScriptBin "offload" (builtins.readFile ./scripts/offload.sh);
 
   maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
   
