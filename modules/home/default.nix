@@ -3,7 +3,7 @@
      [(import ./bat.nix)]                       # better cat command
     ++ [(import ./btop.nix)]                      # resouces monitor 
     ++ [(import ./discord.nix)]                   # discord with catppuccin theme
-    ++ [(import ./floorp/floorp.nix)]             # firefox based browser
+    ++ [(import ./floorp.nix)]             # firefox based browser
     ++ [(import ./fuzzel.nix)]                    # launcher
     ++ [(import ./gaming.nix)]                    # packages related to gaming
     ++ [(import ./git.nix)]                       # version control
