@@ -29,6 +29,7 @@
 
     obsidian
     dust
+    lshw
     
 
     # Python
