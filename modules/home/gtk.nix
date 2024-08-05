@@ -8,6 +8,13 @@
     pkgs.gruvbox-dark-icons-gtk
   ];
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.nordzy-cursor-theme;
+    name = "Nordzy-cursors";
+    size = 22;
+  };
+
   gtk = {
     enable = true;
     font = {
@@ -29,9 +36,4 @@
     };
   };
   
-  home.pointerCursor = {
-    name = "Nordzy-cursors";
-    package = pkgs.nordzy-cursor-theme;
-    size = 22;
-  };
 }
