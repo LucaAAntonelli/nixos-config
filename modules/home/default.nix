@@ -11,7 +11,7 @@
     ++ [(import ./hyprland)]                      # window manager
     ++ [(import ./kitty.nix)]                     # terminal
     ++ [(import ./swaync/swaync.nix)]             # notification deamon
-    ++ [(import ./nvim.nix)]                      # neovim editor
+    ++ [(import ./nixvim)]                      # neovim editor
     ++ [(import ./packages.nix)]                  # other packages
     ++ [(import ./scripts/scripts.nix)]           # personal scripts
     ++ [(import ./spicetify.nix)]                 # spotify client
