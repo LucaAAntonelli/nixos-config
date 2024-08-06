@@ -30,8 +30,7 @@
       pdf = "tdf";
       open = "xdg-open";
       
-      # Use zsh for nix-shell and nix develop
-      nix-develop = "nix develop -c $SHELL";
+      
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
@@ -46,6 +45,7 @@
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
 
+      nix-develop = "nix develop -c $SHELL";
       # Git
       ga   = "git add";
       gaa  = "git add --all";
