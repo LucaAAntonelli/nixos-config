@@ -6,5 +6,11 @@
     enable = true;
     vimAlias = true;
     colorschemes.gruvbox.enable = true;
-       };
+    opts = {
+    	number = true;
+    	shiftwidth = 4;
+	
+	clipboard = "unnamedplus";
+    };   
+  };
 }
