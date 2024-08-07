@@ -2,7 +2,6 @@
 
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim 
-    ./plugins.nix
   ];
 
   programs.nixvim = {
@@ -14,6 +13,12 @@
     	shiftwidth = 4;
 	
 	clipboard = "unnamedplus";
-    };   
+    };  
+    plugins = {
+	bufferline.enable = true;
+	oil.enable = true;
+	lualine.enable = true;
+	nvim-autopairs.enable = true;
+    };
   };
 }
