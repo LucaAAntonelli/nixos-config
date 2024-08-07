@@ -5,5 +5,6 @@
   programs.nixvim = {
     enable = true;
     vimAlias = true;
+    colorschemes.gruvbox.enable = true;
        };
 }
