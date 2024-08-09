@@ -25,7 +25,7 @@
     wget
     git
     owncloud-client
-    betterbird
+    thunderbird
   ];
 
   time.timeZone = "Europe/Zurich";
