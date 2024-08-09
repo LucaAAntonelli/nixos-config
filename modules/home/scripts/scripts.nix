@@ -3,8 +3,6 @@
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
   
   runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
-  music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
-  lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
   
   toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
   toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
@@ -20,18 +18,12 @@
   
   show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
   
-
-  ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
-  
-  record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
 in {
   home.packages = with pkgs; [
     wall-change
     wallpaper-picker
     
     runbg
-    music
-    lofi
   
     toggle_blur
     toggle_oppacity
@@ -48,8 +40,6 @@ in {
     show-keybinds
 
 
-    ascii
 
-    record
   ];
 }
