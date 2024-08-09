@@ -8,7 +8,6 @@
     file                              # Show file information 
     fzf                               # fuzzy finder
     gifsicle                          # gif utility
-    gimp
     gtrash                            # rm replacement, put deleted files in system trash
     jdk8                              # legacy java version for Minecraft
     libreoffice
@@ -17,28 +16,16 @@
     nix-prefetch-github
     prismlauncher                     # minecraft launcher
     ripgrep                           # grep replacement
-    soundwireserver                   # pass audio to android phone
     tdf                               # cli pdf viewer
-    toipe                             # typing test in the terminal
-    valgrind                          # c memory analyzer
     yazi                              # terminal file manager
-    yt-dlp-light
     zenity
-    winetricks
-    wineWowPackages.wayland
 
     obsidian
     dust
     lshw
     
-
-    # Python
-    python3
-
     bleachbit                         # cache cleaner
-    cmatrix
     gparted                           # partition manager
-    ffmpeg
     imv                               # image viewer
     killall
     libnotify
@@ -56,7 +43,6 @@
     unzip
     wget
     xdg-utils
-    xxd
     inputs.alejandra.defaultPackage.${system}
   ]);
 }
