@@ -22,7 +22,6 @@
       cat = "bat";
       nano = "micro";
       code = "codium";
-      py = "python";
       icat = "kitten icat";
       dsize = "du -hs";
       findw = "grep -rl";
