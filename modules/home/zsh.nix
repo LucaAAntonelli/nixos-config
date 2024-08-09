@@ -14,7 +14,6 @@
       export "MICRO_TRUECOLOR=1"
     '';
     shellAliases = {
-      # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
       # Utils
       c = "clear";
