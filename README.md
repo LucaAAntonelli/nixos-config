@@ -119,7 +119,6 @@ Nixos (EXPAND)
 > ${host} is either `desktop` or `laptop`
 
 - ```cdnix```            $\rightarrow$ ```cd ~/nixos-config && codium ~/nixos-config```
-- ```ns```               $\rightarrow$ ```nix-shell --run zsh```
 - ```nix-switch```       $\rightarrow$ ```sudo nixos-rebuild switch --flake ~/nixos-config#${host}```
 - ```nix-switchu```      $\rightarrow$ ```sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${host}```
 - ```nix-flake-update``` $\rightarrow$ ```sudo nix flake update ~/nixos-config#```
@@ -157,7 +156,7 @@ All the scripts are in ```modules/home/scripts/scripts/``` and are exported as p
 extract.sh 
 </summary>
 
-**Description:** This script extract ```tar.gz``` archives in the current directory.
+**Description:** This script extracts ```tar.gz``` archives in the current directory.
 
 **Usage:** ```extract <archive_file>```
 </details>
@@ -167,7 +166,7 @@ extract.sh
 compress.sh 
 </summary>
 
-**Description:** This script compress a file or a folder into a ```tar.gz``` archives which is created in the current directory with the name of the chosen file or folder. 
+**Description:** This script compresses a file or a folder into a ```tar.gz``` archives which is created in the current directory with the name of the chosen file or folder. 
 
 **Usage:** ```compress <file>``` or ```compress <folder>```
 </details>
@@ -359,7 +358,7 @@ Mouse binding
 
 1. **Install NixOs**
 
-   First install nixos using any [graphical ISO image](https://nixos.org/download.html#nixos-iso). 
+   First install NixOS using any [graphical ISO image](https://nixos.org/download.html#nixos-iso). 
    > Only been tested using the Gnome graphical installer and choosing the ```No desktop``` option durring instalation.
 
 2. **Clone the repo**
@@ -451,7 +450,6 @@ Other dotfiles that I learned / copy from:
 
 
 
-<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
 
 <!-- end of page, send back to the top -->
 
@@ -484,7 +482,5 @@ Other dotfiles that I learned / copy from:
 [wl-clip-persist]: https://github.com/Linus789/wl-clip-persist
 [wf-recorder]: https://github.com/ammen99/wf-recorder
 [hyprpicker]: https://github.com/hyprwm/hyprpicker
-[Catppuccin]: https://github.com/catppuccin/catppuccin
-[catppuccin-papirus-folders]: https://github.com/catppuccin/papirus-folders
 [Nordzy-cursors]: https://github.com/alvatip/Nordzy-cursors
 [maxfetch]: https://github.com/jobcmax/maxfetch
