@@ -64,9 +64,6 @@
       gcoe = "git config user.email";
       gcon = "git config user.name";
 
-      # python
-      piv = "python -m venv .venv";
-      psv = "source .venv/bin/activate";
     };
   };
 
