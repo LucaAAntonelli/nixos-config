@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 {
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub = {
@@ -6,7 +6,8 @@
     device = "nodev";
     efiSupport = true;
     efiInstallAsRemovable = false;
-    useOSProber = true;
+    useOSProber = false;
+    extraEntries = builtins.import ./../../hosts/${host}/windows-boot-entry.nix;
   };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
