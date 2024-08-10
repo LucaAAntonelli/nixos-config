@@ -30,6 +30,7 @@
         fontDir.enable = true;
         packages = with pkgs; [
         (nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
+        sn-pro
         ];
     };
 
