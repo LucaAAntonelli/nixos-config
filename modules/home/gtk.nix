@@ -18,7 +18,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "SN Pro";
       size = 11;
     };
     iconTheme = {
