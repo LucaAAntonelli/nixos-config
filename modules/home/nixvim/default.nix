@@ -40,6 +40,7 @@
       timeoutlen = 400;
       undofile = true;
       updatetime = 250;
+      wrap = false;§
     };  
     plugins = {
       bufferline.enable = true;
