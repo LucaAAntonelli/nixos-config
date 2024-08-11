@@ -140,14 +140,245 @@
         '';
         key = "<leader>fm";
         mode = "n";
-        options.desc = "format files";
+        options.desc = "General Format files";
       }
-      
-      
-      
-      
-      
-      
+      {
+        action = "vim.diagnostic.setloclist";
+        key = "<leader>ds";
+        mode = "n";
+        options.desc = "LSP Diagnostic loclist";
+      }
+      {
+        action = "<cmd>enew<CR>";
+        key = "<leader>b";
+        mode = "n";
+        options.desc = "buffer new";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.tabufline").next()
+        end
+        '';
+        key = "<tab>";
+        mode = "n";
+        options.desc = "buffer goto next";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.tabufline").prev()
+        end
+        '';
+        key = "<S-tab>";
+        mode = "n";
+        options.desc = "buffer goto prev";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.tabufline").close_buffer()
+        end
+        '';
+        key = "<leader>x";
+        mode = "n";
+        options.desc = "buffer close";
+      }
+      {
+        action = "gcc";
+        key = "<leader>/";
+        mode = "n";
+        options = {
+          desc = "Toggle Comment";
+          remap = true;
+        };
+      }
+      {
+        action = "gc";
+        key = "<leader>/";
+        mode = "v";
+        options = {
+          desc = "Toggle Comment";
+          remap = true;
+        };
+      }
+      {
+        action = "<cmd>NvimTreeToggle<CR>";
+        key = "<C-n>";
+        mode = "n";
+        options.desc = "nvimtree toggle window";
+      }
+      {
+        action = "<cmd>NvimTreeFocus<CR>";
+        key = "<leader>e";
+        mode = "n";
+        options.desc = "nvimtree focus window";
+      }
+      {
+        action = "<cmd>Telescope live_grep<CR>";
+        key = "<leader>fw";
+        mode = "n";
+        options.desc = "telescope live grep";
+      }
+      {
+        action = "<cmd>Telescope buffers<CR>";
+        key = "<leader>fb";
+        mode = "n";
+        options.desc = "telescope find buffers";
+      }
+      {
+        action = "<cmd>Telescope help_tags<CR>";
+        key = "<leader>fh";
+        mode = "n";
+        options.desc = "telescope help page";
+      }
+      {
+        action = "<cmd>Telescope marks<CR>";
+        key = "<leader>ma";
+        mode = "n";
+        options.desc = "telescope find marks";
+      }
+      {
+        action = "<cmd>Telescope oldfiles<CR>";
+        key = "<leader>fo";
+        mode = "n";
+        options.desc = "telescope find oldfiles";
+      }
+      {
+        action = "<cmd>Telescope current_buffer_fuzzy_find<CR>";
+        key = "<leader>fz";
+        mode = "n";
+        options.desc = "telescope find in current buffer";
+      }
+      {
+        action = "<cmd>Telescope git_commits<CR>";
+        key = "<leader>cm";
+        mode = "n";
+        options.desc = "telescope git commits";
+      }
+      {
+        action = "<cmd>Telescope git_status<CR>";
+        key = "<leader>gt";
+        mode = "n";
+        options.desc = "telescope git status";
+      }
+      {
+        action = "<cmd>Telescope terms<CR>";
+        key = "<leader>pt";
+        mode = "n";
+        options.desc = "telescope pick hidden termn";
+      }
+      {
+        action = "<cmd>Telescope themes<CR>";
+        key = "<leader>th";
+        mode = "n";
+        options.desc = "telescope nvchad themes";
+      }
+      {
+        action = "<cmd>Telescope find_files<CR>";
+        key = "<leader>ff";
+        mode = "n";
+        options.desc = "telescope find_files";
+      }
+      {
+        action = "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>";
+        key = "<leader>fa";
+        mode = "n";
+        options.desc = "telescope find all files";
+      }
+      {
+        action = "<C-\\><C-N>";
+        key = "<C-x>";
+        mode = "t";
+        options.desc = "terminal escape terminal mode";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.term").new { pos = "sp" }
+        end
+        '';
+        key = "<leader>h";
+        mode = "n";
+        options.desc = "terminal new horizontal term";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.term").new { pos = "vsp" }
+        end
+        '';
+        key = "<leader>v";
+        mode = "n";
+        options.desc = "terminal new vertical window";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.term").toggle { pos = "vsp" id = "vtoggleTerm" }
+        end
+        '';
+        key = "<A-v>";
+        mode = ["n" "t"];
+        options.desc = "terminal toggleable vertical term";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.term").toggle { pos = "sp" id = "htoggleTerm" }
+        end
+        '';
+        key = "<A-h>";
+        mode = ["n" "t"];
+        options.desc = "terminal toggleable horizontal term";
+      }
+      {
+        action = ''
+        function()
+          require("nvchad.term").toggle { pos = "float" id = "floatTerm" }
+        end
+        '';
+        key = "<A-i>";
+        mode = "n";
+        options.desc = "terminal toggle floating term";
+      }
+      {
+        action = "<cmd>WhichKey<CR>";
+        key = "<leader>wK";
+        mode = "n";
+        options.desc = "whichkey all keymaps";
+      }
+      {
+        action = ''
+        function()
+          vim.cmd("WhichKey"..vim.fn.input "WhichKey: ")
+        end
+        '';
+        key = "<leader>wk";
+        mode = "n";
+        options.desc = "whichkey query lookup";
+      }
+      {
+        action = ''
+        function()
+          local config = { scope = {} }
+          config.scope.exclude = { language = {}, node_type = {} }
+          config.scope.include = { node_type = {} }
+          local node = require("ibl.scope").get(vim.api.nvim_get_current_buf(), config)
+
+          if node then
+            local start_row, _, end_row, _ = node:range()
+            if start_row ~= end_row then
+              vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start_row + 1, 0})
+              vim.api.nvim_feedkeys("_", "n", true)
+            end
+          end
+        end
+        '';
+        key = "<leader>cc";
+        mode = "n";
+        options.desc = "blankline jump to current context";
+      }
       
       
       
