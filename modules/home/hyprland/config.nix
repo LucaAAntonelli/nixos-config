@@ -275,6 +275,8 @@
         "float,class:^(file_progress)$"
         "float,class:^(confirm)$"
         "float,class:^(dialog)$"
+        "center,title:^(Open Folder)$"
+        "center,title:^(Open File)$"
         "float,class:^(download)$"
         "float,class:^(notification)$"
         "float,class:^(error)$"
