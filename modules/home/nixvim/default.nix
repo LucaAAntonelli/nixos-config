@@ -190,7 +190,7 @@
           require("nvchad.tabufline").next()
         end
         '';
-        key = "<tab>";
+        key = "<TAB>";
         mode = "n";
         options.desc = "buffer goto next";
       }
@@ -200,7 +200,7 @@
           require("nvchad.tabufline").prev()
         end
         '';
-        key = "<S-tab>";
+        key = "<S-TAB>";
         mode = "n";
         options.desc = "buffer goto prev";
       }
