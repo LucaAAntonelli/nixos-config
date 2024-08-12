@@ -9,6 +9,8 @@
     vimAlias = true;
     colorschemes.gruvbox.enable = true;
     extraConfigLua = ''
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
       vim.opt.whichwrap:append("<>[]hl")
     '';
     globals = {
@@ -40,7 +42,7 @@
       timeoutlen = 400;
       undofile = true;
       updatetime = 250;
-      wrap = false;§
+      wrap = false;
     };  
     plugins = {
       bufferline.enable = true;

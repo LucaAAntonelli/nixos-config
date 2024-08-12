@@ -27,6 +27,7 @@
       findw = "grep -rl";
       pdf = "tdf";
       open = "xdg-open";
+      inv = ''vim $(fzf -m --preview="bat --color=always {}")''; # open fuzzy finder for neovim with syntax-highlighted preview
       
       
 
