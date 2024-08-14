@@ -28,5 +28,6 @@
     XCURSOR_SIZE = "22";
     HYPRCURSOR_THEME = "Nordzy-cursors";
     HYPRCURSOR_SIZE = "22";
+    KWIN_DRM_USE_MODIFIERS = "0";
   };
 }
