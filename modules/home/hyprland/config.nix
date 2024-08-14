@@ -294,6 +294,12 @@
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
+
+        "workspace 1,class:^(floorp)$"
+        "workspace 2,class:^(kitty)$"
+        "workspace 3,class:^(VSCodium)"
+        "workspace 4,class:^(obsidian)"
+        "workspace 5,class:^(Spotify)"
       ];
 
     };
