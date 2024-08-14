@@ -147,6 +147,9 @@
         "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper-picker"
+        # Move currently focused workspace to other monitor, switch focus
+        "$mainMod, O,movecurrentworkspacetomonitor,+1"
+        "$mainMod, O,focusmonitor,+1"
 
         # screenshot
         "$mainMod, Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
