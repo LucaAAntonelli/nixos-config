@@ -395,6 +395,14 @@ Mouse binding
       - Enable Discord theme (in Discord settings under VENCORD > Themes).
       - Configure the browser (for now, all browser configuration is done manually).
 
+6. **Removing OSprober**
+   OSprober is a tool that scans drives for alternative boot options. You need this in case you are running a dual boot setup, i.e. if you're using multiple operating sstems on one device. The problem with OSprober is that it runs _every time_ you rebuild the system. Here's the alternative: 
+   1. Run OSprober once and reboot your system, ensuring that the boot entries actually work
+   2. Set `boot.loader.grub.useOSprober = false;`
+   3. Navigate to `/boot/grub/grub.cfg` and copy any non-NixOS entry
+   4. Add the entries into `boot.loader.grub.extraEntries` as a single string
+
+
 ### Install script walkthrough
 
 A brief walkthrough of what the install script does.
