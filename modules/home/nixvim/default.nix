@@ -14,14 +14,6 @@
     '';
     extraConfigLua = ''
       vim.opt.whichwrap:append("<>[]hl")
-      vim.api.nvim_create_autocmd("VimEnter", {
-        callback = function()
-          local directory = vim.fn.isdirectory(vim.fn.expand("%:p"))
-          if directory == 1 then
-            require ("nvim-tree.api").tree.open()
-          end
-        end
-      })
     '';
     globals = {
       mapleader = " ";
