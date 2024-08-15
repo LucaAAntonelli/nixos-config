@@ -11,6 +11,10 @@ local function buf_index(bufnr)
   end
 end
 
+M.greet = function()
+  print("Hello from tabufline.lua")
+end
+
 M.next = function()
   local bufs = vim.t.bufs
   local curbufIndex = buf_index(cur_buf())

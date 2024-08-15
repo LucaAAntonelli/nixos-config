@@ -8,6 +8,13 @@
     enable = true;
     vimAlias = true;
     colorschemes.gruvbox.enable = true;
+    files = {
+      "functions.lua" = {
+        opts = {
+          expandtab = true;
+        };
+      };
+    };
     extraConfigLuaPre = ''
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
@@ -203,7 +210,7 @@
       {
         action = ''
         function()
-          require("tabufline.tabufline").next()
+          require("functions").next()
         end
         '';
         key = "<TAB>";
@@ -213,7 +220,7 @@
       {
         action = ''
         function()
-          require("tabufline.tabufline").prev()
+          require("functions").prev()
         end
         '';
         key = "<S-TAB>";
