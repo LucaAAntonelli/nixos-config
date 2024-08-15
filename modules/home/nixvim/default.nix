@@ -90,6 +90,16 @@
 
     keymaps = [
       {
+        action = ''function()
+            require("functions").greet()
+          end
+        '';
+        key = "<C-*>";
+        mode = "n";
+        options.desc = "import function testing";
+      }
+
+      {
         action = "<ESC>^i";
         key = "<C-b>";
         mode = "i";
