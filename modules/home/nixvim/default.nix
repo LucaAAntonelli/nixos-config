@@ -218,31 +218,19 @@
         options.desc = "buffer new";
       }
       {
-        action = ''
-        function()
-          require("functions").next()
-        end
-        '';
+        action = "<cmd>BufferLineCycleNext<CR>";
         key = "<TAB>";
         mode = "n";
         options.desc = "buffer goto next";
       }
       {
-        action = ''
-        function()
-          require("functions").prev()
-        end
-        '';
+        action = "<cmd>BufferLineCyclePrev<CR>";
         key = "<S-TAB>";
         mode = "n";
         options.desc = "buffer goto prev";
       }
       {
-        action = ''
-        function()
-          require("nvchad.tabufline").close_buffer()
-        end
-        '';
+        action = "<cmd>bdelete<cr>";
         key = "<leader>x";
         mode = "n";
         options.desc = "buffer close";
