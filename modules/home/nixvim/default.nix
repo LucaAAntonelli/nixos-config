@@ -8,10 +8,20 @@
     enable = true;
     vimAlias = true;
     colorschemes.gruvbox.enable = true;
-    extraConfigLua = ''
+    extraConfigLuaPre = ''
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
+    '';
+    extraConfigLua = ''
       vim.opt.whichwrap:append("<>[]hl")
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          local directory = vim.fn.isdirectory(vim.fn.expand("%:p"))
+          if directory == 1 then
+            require ("nvim-tree.api").tree.open()
+          end
+        end
+      })
     '';
     globals = {
       mapleader = " ";
@@ -46,10 +56,20 @@
     };  
     plugins = {
       bufferline.enable = true;
-      oil.enable = true;
       lualine.enable = true;
       nvim-autopairs.enable = true;
-      nvim-tree.enable = true;
+      nvim-tree = {
+        enable = true;
+        disableNetrw = true;
+        respectBufCwd = true;
+        syncRootWithCwd = true;
+        openOnSetup = true;
+        updateFocusedFile = {
+          enable = true;
+          updateRoot = true;
+        };
+        diagnostics.enable = true;
+      };
       gitsigns.enable = true;
       cmp.enable = true;
       telescope.enable = true;
