@@ -88,7 +88,7 @@ OLD (EXPAND)
 | **Screen Recording**        | [wf-recorder][wf-recorder] |
 | **Clipboard**               | [wl-clip-persist][wl-clip-persist] |
 | **Color Picker**            | [hyprpicker][hyprpicker] |
-
+| **Notes**                   | [Obsidian][obsidian] |
 
 ### 📝 Shell aliases
 
@@ -394,6 +394,10 @@ Mouse binding
    Even though I use home manager, there is still a little bit of manual configuration to do:
       - Enable Discord theme (in Discord settings under VENCORD > Themes).
       - Configure the browser (for now, all browser configuration is done manually).
+      - Set appearance of Obsidian:
+        - Set the interface and text fonts to "SN Pro"
+        - Set the monospace font to "JetBrainsMonoNL Nerd Fonts"
+    
 
 6. **Removing OSprober**
    OSprober is a tool that scans drives for alternative boot options. You need this in case you are running a dual boot setup, i.e. if you're using multiple operating sstems on one device. The problem with OSprober is that it runs _every time_ you rebuild the system. Here's the alternative: 
@@ -466,6 +470,7 @@ Other dotfiles that I learned / copy from:
 </div>
 
 <!-- Links -->
+[obsidian]: https://obsidian.md
 [Hyprland]: https://github.com/hyprwm/Hyprland
 [Kitty]: https://github.com/kovidgoyal/kitty
 [Starship]: https://github.com/starship/starship

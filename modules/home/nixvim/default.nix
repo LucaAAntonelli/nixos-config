@@ -63,18 +63,22 @@
         diagnostics.enable = true;
       };
       gitsigns.enable = true;
-      cmp.enable = true;
       telescope.enable = true;
       treesitter.enable = true;
       indent-blankline.enable = true;
       friendly-snippets.enable = true;
-      luasnip.enable = true;
+      cmp.enable = true;
+      cmp_luasnip.enable = true;
+      cmp-path.enable = true;
+      cmp-buffer.enable = true;
+      cmp-nvim-lua.enable = true;
       which-key.enable = true;     
     };
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
-      nvim-lspconfig
+      cmp-nvim-lsp
       mason-nvim
+      conform-nvim
     ];
 
     keymaps = [
@@ -199,7 +203,7 @@
       {
         action = ''
         function()
-          require("nvchad.tabufline").next()
+          require("tabufline.tabufline").next()
         end
         '';
         key = "<TAB>";
@@ -209,7 +213,7 @@
       {
         action = ''
         function()
-          require("nvchad.tabufline").prev()
+          require("tabufline.tabufline").prev()
         end
         '';
         key = "<S-TAB>";
