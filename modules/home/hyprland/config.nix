@@ -289,6 +289,9 @@
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
+        "float,class:thunderbird,title:^(?!Mozilla*)" # Make Thunderbird windows float except main mail client
+        "size 850 500,class:thunderbird,title:^(?!Mozilla*)" # resize
+        "keepaspectratio 0,class:thunderbird,title:^(?!Mozilla*)" # ignore original aspect ratio
 
         "opacity 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"
