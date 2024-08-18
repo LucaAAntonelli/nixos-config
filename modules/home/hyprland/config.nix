@@ -291,6 +291,7 @@
         "float,title:^(File Operation Progress)$"
         "float,class:thunderbird,title:^(?!Mozilla*)" # Make Thunderbird windows float except main mail client
         "size 850 500,class:thunderbird,title:^(?!Mozilla*)" # resize
+        "size 900 700,class:^(?=.*thunderbird),title:^(?=.*New Event)"
         "keepaspectratio 0,class:thunderbird,title:^(?!Mozilla*)" # ignore original aspect ratio
 
         "opacity 0.0 override,class:^(xwaylandvideobridge)$"
