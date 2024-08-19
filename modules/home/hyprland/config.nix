@@ -281,6 +281,8 @@
         "float,class:^(dialog)$"
         "center,title:^(Open Folder)$"
         "center,title:^(Open File)$"
+        "center,title:^(Open)$" # Name of file dialog in LibreOffice
+        "size 850 500,title:^(Open)$"
         "float,class:^(download)$"
         "float,class:^(notification)$"
         "float,class:^(error)$"
