@@ -291,6 +291,7 @@
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
+        "maximize,title:^(Ablaze Floorp Private Browsing)$"
         "float,class:thunderbird,title:^(?!Mozilla*)" # Make Thunderbird windows float except main mail client
         "size 850 500,class:thunderbird,title:^(?!Mozilla*)" # resize
         "size 900 700,class:^(?=.*thunderbird),title:^(?=.*New Event)"
