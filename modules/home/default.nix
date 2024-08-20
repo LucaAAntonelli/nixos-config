@@ -1,9 +1,9 @@
 {inputs, username, host, ...}: {
   imports =
-     [(import ./bat.nix)]                       # better cat command
+     [(import ./bat.nix)]                         # better cat command
     ++ [(import ./btop.nix)]                      # resouces monitor 
     ++ [(import ./discord.nix)]                   # discord with catppuccin theme
-    ++ [(import ./floorp.nix)]             # firefox based browser
+    ++ [(import ./floorp.nix)]                    # firefox based browser
     ++ [(import ./fuzzel.nix)]                    # launcher
     ++ [(import ./gaming.nix)]                    # packages related to gaming
     ++ [(import ./git.nix)]                       # version control
@@ -11,13 +11,14 @@
     ++ [(import ./hyprland)]                      # window manager
     ++ [(import ./kitty.nix)]                     # terminal
     ++ [(import ./swaync/swaync.nix)]             # notification deamon
-    ++ [(import ./nixvim)]                      # neovim editor
+    ++ [(import ./nixvim)]                        # neovim editor
     ++ [(import ./packages.nix)]                  # other packages
     ++ [(import ./scripts/scripts.nix)]           # personal scripts
     ++ [(import ./spicetify.nix)]                 # spotify client
     ++ [(import ./starship.nix)]                  # shell prompt
     ++ [(import ./swaylock.nix)]                  # lock screen
     ++ [(import ./vscodium.nix)]                  # vscode forck
+    ++ [(import ./tmux.nix)]                      # tmux
     ++ [(import ./waybar)]                        # status bar
     ++ [(import ./zsh.nix)];                      # shell
 }
