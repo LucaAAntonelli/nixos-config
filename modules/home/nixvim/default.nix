@@ -86,6 +86,7 @@
       cmp-nvim-lsp
       mason-nvim
       conform-nvim
+      vim-tmux-navigator
     ];
 
     keymaps = [
