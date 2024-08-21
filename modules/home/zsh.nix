@@ -40,6 +40,7 @@
       nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#${host}";
       nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${host}";
       nix-flake-update = "sudo nix flake update ~/nixos-config#";
+      nix-list-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       nix-develop = "nix develop -c $SHELL";
       
