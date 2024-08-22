@@ -19,6 +19,7 @@
         "tray" 
         "bluetooth"
         "cpu"
+        "custom/gpu"
         "memory"
         "disk"
         "pulseaudio" 
@@ -143,6 +144,18 @@
         on-click = "swaync-client -t -sw";
         on-click-right = "swaync-client -d -sw";
         escape = true;
+    };
+    "custom/gpu" = {
+      # exec = "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits";
+      exec = ''
+        nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | awk -v total=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits) '{printf "%.2f\n", ($1/total)*100}'
+     '';
+      exec-alt = ''
+        nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | awk '{printf "%.2f\n", $1/1024}'
+      '';
+      format = "  {:2}%";
+      format-alt = "  {}GiB";
+      interval = 1;
     };
   };
 }
