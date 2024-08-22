@@ -1,24 +1,25 @@
 {inputs, username, host, ...}: {
-  imports =
-     [(import ./bat.nix)]                         # better cat command
-    ++ [(import ./btop.nix)]                      # resouces monitor 
-    ++ [(import ./discord.nix)]                   # discord with catppuccin theme
-    ++ [(import ./floorp.nix)]                    # firefox based browser
-    ++ [(import ./fuzzel.nix)]                    # launcher
-    ++ [(import ./gaming.nix)]                    # packages related to gaming
-    ++ [(import ./git.nix)]                       # version control
-    ++ [(import ./gtk.nix)]                       # gtk theme
-    ++ [(import ./hyprland)]                      # window manager
-    ++ [(import ./kitty.nix)]                     # terminal
-    ++ [(import ./swaync/swaync.nix)]             # notification deamon
-    ++ [(import ./nixvim)]                        # neovim editor
-    ++ [(import ./packages.nix)]                  # other packages
-    ++ [(import ./scripts/scripts.nix)]           # personal scripts
-    ++ [(import ./spicetify.nix)]                 # spotify client
-    ++ [(import ./starship.nix)]                  # shell prompt
-    ++ [(import ./swaylock.nix)]                  # lock screen
-    ++ [(import ./vscodium.nix)]                  # vscode forck
-    ++ [(import ./tmux.nix)]                      # tmux
-    ++ [(import ./waybar)]                        # status bar
-    ++ [(import ./zsh.nix)];                      # shell
+  imports = [
+    ./bat.nix                         # better cat command
+    ./btop.nix                        # resouces monitor 
+    ./discord.nix                     # discord with catppuccin theme
+    ./floorp.nix                      # firefox based browser
+    ./fuzzel.nix                      # launcher
+    ./gaming.nix                      # packages related to gaming
+    ./git.nix                         # version control
+    ./gtk.nix                         # gtk theme
+    ./hyprland                        # window manager
+    ./kitty.nix                       # terminal
+    ./swaync/swaync.nix               # notification deamon
+    ./nixvim                          # neovim editor
+    ./packages.nix                    # other packages
+    ./scripts/scripts.nix             # personal scripts
+    ./spicetify.nix                   # spotify client
+    ./starship.nix                    # shell prompt
+    ./swaylock.nix                    # lock screen
+    ./vscodium.nix                    # vscode forck
+    ./tmux.nix                        # tmux
+    ./waybar                          # status bar
+    ./zsh.nix
+  ];                      # shell
 }
