@@ -28,9 +28,7 @@
     opts = {
     	number = true;
     	shiftwidth = 2;
-	    clipboard = {
-        providers.wl-copy.enable = true;
-      };
+	    clipboard = "unnamedplus";
       laststatus = 3;
       showmode = false;
       cursorline = true;
