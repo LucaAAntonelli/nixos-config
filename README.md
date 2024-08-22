@@ -79,7 +79,7 @@ OLD (EXPAND)
 | **Fonts**                   | [Nerd fonts][Nerd fonts] |
 | **Color Scheme**            | [Gruvbox-Dark][Gruvbox-Dark] |
 | **Cursor**                  | [Nordzy-cursors][Nordzy-cursors] |
-| **Icons**                   | [Gruvbox-Icons-Plus][Gruvbox-Icons-Plus] |
+| **Icons**                   | [Gruvbox-Icons][Gruvbox-Icons] + [Gruvbox-Icons-Plus][Gruvbox-Icons-Plus] |
 | **Lockscreen**              | [Swaylock-effects][Swaylock-effects] |
 | **Image Viewer**            | [imv][imv] |
 | **Media Player**            | [mpv][mpv] |
@@ -470,6 +470,9 @@ Other dotfiles that I learned / copy from:
 </div>
 
 <!-- Links -->
+[Gruvbox-Dark]: https://github.com/morhetz/gruvbox
+[Gruvbox-Icons-Plus]:https://github.com/SylEleuth/gruvbox-plus-icon-pack
+[Gruvbox-Icons]:https://www.opencode.net/adhe/gruvboxplasma
 [obsidian]: https://obsidian.md
 [Hyprland]: https://github.com/hyprwm/Hyprland
 [Kitty]: https://github.com/kovidgoyal/kitty
