@@ -105,6 +105,9 @@ install() {
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
     sleep 0.2
 
+    # General installation will be via HTTPS, not ssh -> switch
+    git remote set-url origin git@github.com:LucaAAntonelli/nixos-config.git
+
     # Last Confirmation
     echo -en "You are about to start the system build, do you want to process ? "
     confirm
