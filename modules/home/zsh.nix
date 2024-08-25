@@ -43,7 +43,9 @@
       nix-list-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       nix-develop = "nix develop -c $SHELL";
-      
+      hm-switch = "home-manager switch --flake ~/nixos-config";
+      hm-list = "home-manager generations";
+
       # Git
       ga   = "git add";
       gaa  = "git add --all";
