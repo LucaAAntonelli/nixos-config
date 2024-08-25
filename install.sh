@@ -111,7 +111,7 @@ install() {
 
     # Build the system (flakes + home manager)
     echo -e "\nBuilding dotfiles with home-manager...\n"
-    nix run .#homeConfigurations.${username}@${HOST}.activationPackage
+    nix run .#homeConfigurations.${username}@${HOST}.activationPackage --extra-experimental-features nix-command --extra-experimental-features flakes
     echo -e "\nBuilding NixOS core configuration...\n"
     sudo nixos-rebuild switch --flake .#${HOST}
 }
