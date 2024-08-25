@@ -1,4 +1,4 @@
-{ hostname, config, pkgs, host, ...}: 
+{ host , pkgs, ...}:
 {
   programs.zsh = {
     enable = true;

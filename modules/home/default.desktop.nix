@@ -1,4 +1,4 @@
-{inputs, username, host, ...}: {
+{inputs, username, ...}: {
   imports = [
     ./default.nix
   ];

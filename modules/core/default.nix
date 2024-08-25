@@ -1,4 +1,7 @@
-{ inputs, nixpkgs, self, username, host, ...}:
+{ inputs, nixpkgs, self, username, config, ...}:
+let 
+  host = config.host;
+in
 {
   imports = [
     ./bootloader.nix
