@@ -110,7 +110,9 @@ install() {
     confirm
 
     # Build the system (flakes + home manager)
-    echo -e "\nBuilding the system...\n"
+    echo -e "\nBuilding dotfiles with home-manager...\n"
+    nix run .#homeConfigurations.${username}@${HOST}.activationPackage
+    echo -e "\nBuilding NixOS core configuration...\n"
     sudo nixos-rebuild switch --flake .#${HOST}
 }
 
