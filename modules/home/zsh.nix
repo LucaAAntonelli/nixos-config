@@ -45,6 +45,7 @@
       nix-develop = "nix develop -c $SHELL";
       hm-switch = "home-manager switch --flake ~/nixos-config";
       hm-list = "home-manager generations";
+      nix-switch-all = "hm-switch && nix-switch";
 
       # Git
       ga   = "git add";
