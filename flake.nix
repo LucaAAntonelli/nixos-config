@@ -57,9 +57,6 @@
   in
   {
 
-    extraSpecialArgs = { inherit inputs; };
-    
-
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
