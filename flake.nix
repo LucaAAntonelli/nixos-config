@@ -47,7 +47,6 @@
 
   outputs = { nixpkgs, self, home-manager, ...} @ inputs:
   let
-    selfPkgs = import ./pkgs;
     username = "luca";
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -57,7 +56,6 @@
     lib = nixpkgs.lib;
   in
   {
-    overlays.default = selfPkgs.overlay;
 
     extraSpecialArgs = { inherit inputs; };
     
