@@ -28,7 +28,7 @@
       pdf = "tdf";
       open = "xdg-open";
       inv = ''fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"''; # open fuzzy finder for neovim with syntax-highlighted preview
-      
+      clip = "wl-copy < "; # use with file path to copy file content     
       
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
