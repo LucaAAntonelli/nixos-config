@@ -17,5 +17,6 @@ in
     ./wayland.nix
     ./fonts.nix
     ./steam.nix
+    ./nix-helper.nix
   ];
 }
