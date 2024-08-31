@@ -33,12 +33,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gruvbox-starship = {
-      url = "github:fang2hou/starship-gruvbox-rainbow";
-      flake = false;
-    };
-
-
     spicetify-nix = {
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -290,22 +290,6 @@
         "type": "github"
       }
     },
-    "gruvbox-starship": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1690123456,
-        "narHash": "sha256-7gFkssVcPe5PD+BD1JgXnJndN6N+EBwzjU4AnhoV/Ws=",
-        "owner": "fang2hou",
-        "repo": "starship-gruvbox-rainbow",
-        "rev": "c1632151c16daec35aff2a066025bd992c880952",
-        "type": "github"
-      },
-      "original": {
-        "owner": "fang2hou",
-        "repo": "starship-gruvbox-rainbow",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -790,7 +774,6 @@
       "inputs": {
         "alejandra": "alejandra",
         "firefox-addons": "firefox-addons",
-        "gruvbox-starship": "gruvbox-starship",
         "home-manager": "home-manager",
         "hypr-contrib": "hypr-contrib",
         "hyprland": "hyprland",
