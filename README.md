@@ -29,7 +29,7 @@
 <br>
 </div>
 
-### 🖼️ Gallery
+### 🖼️ Galleryy [OUTDATED]
 
 <p align="center">
    <img src="./.github/assets/screenshots/1.png" /> <br>
