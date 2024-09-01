@@ -97,7 +97,7 @@ install() {
     # Copy the wallpapers
     echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
     cp -r wallpapers/wallpaper.png ~/Pictures/wallpapers
-    cp -r wallpapers/lock-screen.png ~/Pictures/wallpapers
+    cp -r wallpapers/lock-screen.png ~/Pictures/wallpapers/others
     sleep 0.2
 
     # Get the hardware configuration

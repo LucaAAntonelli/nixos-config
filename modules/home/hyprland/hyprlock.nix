@@ -27,7 +27,7 @@
     # BACKGROUND
     background {
       monitor =
-      path = ~/Pictures/wallpapers/lock-screen.png
+      path = ~/Pictures/wallpapers/others/lock-screen.png
       color = $base
       blur_passes = 0
     }
