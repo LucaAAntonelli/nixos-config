@@ -81,6 +81,7 @@
         enable = true;
         servers = {
           lua-ls.enable = true;
+          nixd.enable = true; # nix LSP
           rust-analyzer = {
             enable = true;
             installCargo = true;
