@@ -72,7 +72,7 @@
       treesitter.enable = true;
       indent-blankline.enable = true;
       friendly-snippets.enable = true;
-      cmp_luasnip.enable = true;
+      luasnip.enable = true;
       cmp-path.enable = true;
       cmp-buffer.enable = true;
       cmp-nvim-lua.enable = true;
@@ -91,20 +91,24 @@
       cmp = {
         enable = true;
         autoEnableSources = true;
+        settings.sources = [
+          {name = "nvim_lsp";}
+          {name = "path";}
+          {name = "buffer";}
+        ];
 
         settings.mapping = {
           "<CR>" = "cmp.mapping.confirm({ select = true })";
           "<Tab>" = {
             __raw = ''
               function(fallback)
+                local luasnip = require("luasnip")
                 if cmp.visible() then
                   cmp.select_next_item()
                 elseif luasnip.expandable() then
                   luasnip.expand()
                 elseif luasnip.expand_or_jumpable() then
                   luasnip.expand_or_jump()
-                elseif check_backspace() then
-                  fallback()
                 else
                   fallback()
                 end
