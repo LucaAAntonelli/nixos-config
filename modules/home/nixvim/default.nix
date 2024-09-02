@@ -72,17 +72,52 @@
       treesitter.enable = true;
       indent-blankline.enable = true;
       friendly-snippets.enable = true;
-      cmp.enable = true;
       cmp_luasnip.enable = true;
       cmp-path.enable = true;
       cmp-buffer.enable = true;
       cmp-nvim-lua.enable = true;
       which-key.enable = true;     
+      lsp = {
+        enable = true;
+        servers = {
+          lua-ls.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installCargo = true;
+            installRustc = true;
+          };
+        };
+      };
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+
+        settings.mapping = {
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<Tab>" = {
+            __raw = ''
+              function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                elseif luasnip.expandable() then
+                  luasnip.expand()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                elseif check_backspace() then
+                  fallback()
+                else
+                  fallback()
+                end
+              end
+            '';
+            modes = [ "i" "s" ];
+          };
+        };
+      };
     };
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
       cmp-nvim-lsp
-      mason-nvim
       conform-nvim
       vim-tmux-navigator
     ];
