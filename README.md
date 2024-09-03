@@ -53,8 +53,7 @@ There are other minor differences, mainly small changes like installed packages 
 -   [modules](modules) 🍱 modularized NixOS configurations
     -   [core](modules/core/) ⚙️ Core NixOS configuration
     -   [homes](modules/home/) 🏠 my [Home-Manager](https://github.com/nix-community/home-manager) config
--   [pkgs](flake/pkgs) 📦 packages exported by my flake
--   [wallpapers](wallpapers/) 🌄 wallpapers collection
+-   [wallpapers](wallpapers/) 🌄 wallpaper and lock screen images
 
 ### 📓 Components
 |                             | NixOS + Hyprland                                                                              |
@@ -102,6 +101,8 @@ Utils (EXPAND)
 - ```l```     $\rightarrow$ ```eza --icons  -a --group-directories-first -1```
 - ```ll```    $\rightarrow$ ```eza --icons  -a --group-directories-first -1 --no-user --long```
 - ```tree```  $\rightarrow$ ```eza --icons --tree --group-directories-first```
+- ```inv```   $\rightarrow$ ```fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"```
+- ```clip```  $\rightarrow$ ```wl-copy < ```
 </details>
 
 <details>
@@ -115,7 +116,12 @@ Nixos (EXPAND)
 - ```nix-switch```       $\rightarrow$ ```sudo nixos-rebuild switch --flake ~/nixos-config#${host}```
 - ```nix-switchu```      $\rightarrow$ ```sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${host}```
 - ```nix-flake-update``` $\rightarrow$ ```sudo nix flake update ~/nixos-config#```
-- ```nix-clean```        $\rightarrow$ ```sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d```
+- ```nix-clean```        $\rightarrow$ ```nh clean all --keep 5```
+- ```nix-list```         $\rightarrow$ ```sudo nix-env --list-generations --profile /nix/var/nix/profiles/system```
+- ```hm-switch```        $\rightarrow$ ```home-manager switch --flake ~/nixos-config```
+- ```hm-list```          $\rightarrow$ ```home-manager generations```
+- ```nix-switch-all```   $\rightarrow$ ```hm-switch && nix-switch```
+- ```nix-develop```      $\rightarrow$ ```nix develop -c $SHELL```
 </details>
 
 <details>
