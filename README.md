@@ -1,12 +1,11 @@
 <h1 align="center">
-   <img src="./.github/assets/logo/nixos-logo.png  " width="100px" /> 
-   <br>
-      LucaAAntonelli's Flakes 
-   <br>
-      <img src="./.github/assets/palette/gruvbox-pallet.png" width="600px" /> <br>
-
+    <img src="./.github/assets/logo/nixos-logo.png  " width="100px" /> 
+    <br>
+        LucaAAntonelli's Flakes 
+    <br>
+        <img src="./.github/assets/palette/gruvbox-pallet.png" width="600px" /> <br>
     <div align="center">
-      <p></p>
+        <p></p>
       <div align="center">
          <a href="https://github.com/LucaAAntonelli/nixos-config/stargazers">
             <img src="https://img.shields.io/github/stars/LucaAAntonelli/nixos-config?color=FABD2F&labelColor=282828&style=for-the-badge&logo=starship&logoColor=FABD2F">
@@ -23,10 +22,7 @@
       </div>
       <br>
     </div>
-   </h1>
-
-<br>
-</div>
+</h1>
 
 ### 🖼️ Galleryy [OUTDATED]
 

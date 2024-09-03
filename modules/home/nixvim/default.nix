@@ -82,6 +82,7 @@
         servers = {
           lua-ls.enable = true;
           nixd.enable = true; # nix LSP
+          html.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = true;
