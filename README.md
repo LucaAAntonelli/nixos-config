@@ -24,8 +24,7 @@
     </div>
 </h1>
 
-### 🖼️ Galleryy [OUTDATED]
-
+### 🖼️ Gallery
 <p align="center">
    <img src="./.github/assets/screenshots/1.png" /> <br>
    <img src="./.github/assets/screenshots/2.png" /> <br>
@@ -36,6 +35,14 @@
 
 
 # 🗃️ Overview
+
+This is my NixOS configuration, based on [FrostPhoenix's amazing config](https://github.com/FrostPhoenix/nixos-config)
+
+### :asterisk: Main Differences
+- Home-Manager is installed as a standalone
+- The config includes NeoVim, configured with [NixVim](https://github.com/nix-community/nixvim)
+- The color scheme is Gruvbox-Dark
+There are other minor differences, mainly small changes like installed packages and extensions.
 
 ### 📚 Layout
 
