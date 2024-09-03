@@ -399,6 +399,7 @@ Mouse binding
     
 
 6. **Removing OSprober**
+
    OSprober is a tool that scans drives for alternative boot options. You need this in case you are running a dual boot setup, i.e. if you're using multiple operating sstems on one device. The problem with OSprober is that it runs _every time_ you rebuild the system. Here's the alternative: 
    1. Run OSprober once and reboot your system, ensuring that the boot entries actually work
    2. Set `boot.loader.grub.useOSprober = false;`
