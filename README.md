@@ -436,21 +436,21 @@ A brief walkthrough of what the install script does.
 
 6. Choose a host (desktop / laptop)
 
-   Now you will need to choose the host you want. It depend on whether you are using a desktop or laptop.
+   Now you will need to choose the host you want. It depends on whether you are using a desktop or laptop.
 
 7. Build the system
 
-   Lastly, it will build the system, which includes both the flake config and home-manager config.
+   Finally, it will build the system, which includes both the flake config and home-manager config.
 
 # 👥 Credits
 
-Other dotfiles that I learned / copy from:
+Other dotfiles that I learned/copied from:
 
 - Nix Flakes
-  - [nomadics9/NixOS-Flake](https://github.com/nomadics9/NixOS-Flake): This is where I start my nixos / hyprland journey.
+  - [nomadics9/NixOS-Flake](https://github.com/nomadics9/NixOS-Flake): This is where I started my NixOS / hyprland journey.
   - [samiulbasirfahim/Flakes](https://github.com/samiulbasirfahim/Flakes): General flake / files structure
   - [justinlime/dotfiles](https://github.com/justinlime/dotfiles): Mainly waybar (old design)
-  - [skiletro/nixfiles](https://github.com/skiletro/nixfiles): Vscodium config (that prevent it to crash)
+  - [skiletro/nixfiles](https://github.com/skiletro/nixfiles): Vscodium config (that prevents crashing)
   - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
 
 - README
