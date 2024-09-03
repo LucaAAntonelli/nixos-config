@@ -4,7 +4,6 @@
       LucaAAntonelli's Flakes 
    <br>
       <img src="./.github/assets/palette/gruvbox-pallet.png" width="600px" /> <br>
-   <div align="center">
 
     <div align="center">
       <p></p>
