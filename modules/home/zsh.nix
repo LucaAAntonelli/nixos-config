@@ -12,6 +12,7 @@
     initExtraFirst = ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
+      eval "$(direnv hook zsh)"
     '';
     shellAliases = {
 
