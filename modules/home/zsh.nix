@@ -7,12 +7,13 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf" ];
+      plugins = [ "git" "fzf" "tmux" ];
     };
     initExtraFirst = ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
       eval "$(direnv hook zsh)"
+      ZSH_TMUX_AUTOSTART=true
     '';
     shellAliases = {
 

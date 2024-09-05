@@ -1,4 +1,4 @@
-{pkgs, lib, ...}:
+{pkgs, ...}:
 {
   programs.tmux = {
     enable = true;
@@ -13,10 +13,12 @@
       better-mouse-mode
       gruvbox
       yank
+      continuum
     ];
     extraConfig = ''
       bind '"' split-window -v -c "#{pane_current_path}"
       bind '%' split-window -h -c "#{pane_current_path}"
+      set -g @continuum-boot 'on'
     '';
   };
 }
