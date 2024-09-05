@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, host, ...}: 
+{...}: 
 {
   imports = [
     ./bat.nix                         # better cat command
