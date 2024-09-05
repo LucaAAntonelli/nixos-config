@@ -131,16 +131,6 @@
 
     keymaps = [
       {
-        action = ''function()
-            require("functions").greet()
-          end
-        '';
-        key = "<C-*>";
-        mode = "n";
-        options.desc = "import function testing";
-      }
-
-      {
         action = "<ESC>^i";
         key = "<C-b>";
         mode = "i";
@@ -231,13 +221,7 @@
         options.desc = "toggle relative number";
       }
       {
-        action = "<cmd>NvCheatsheet<CR>";
-        key = "<leader>ch";
-        mode = "n";
-        options.desc = "toggle nvcheatsheet";
-      }
-      {
-        action = '' 
+        action.__raw = '' 
           function()
           require("conform").format {lsp_fallback=true}
           end
@@ -385,56 +369,6 @@
         options.desc = "terminal escape terminal mode";
       }
       {
-        action = ''
-        function()
-          require("nvchad.term").new { pos = "sp" }
-        end
-        '';
-        key = "<leader>h";
-        mode = "n";
-        options.desc = "terminal new horizontal term";
-      }
-      {
-        action = ''
-        function()
-          require("nvchad.term").new { pos = "vsp" }
-        end
-        '';
-        key = "<leader>v";
-        mode = "n";
-        options.desc = "terminal new vertical window";
-      }
-      {
-        action = ''
-        function()
-          require("nvchad.term").toggle { pos = "vsp" id = "vtoggleTerm" }
-        end
-        '';
-        key = "<A-v>";
-        mode = ["n" "t"];
-        options.desc = "terminal toggleable vertical term";
-      }
-      {
-        action = ''
-        function()
-          require("nvchad.term").toggle { pos = "sp" id = "htoggleTerm" }
-        end
-        '';
-        key = "<A-h>";
-        mode = ["n" "t"];
-        options.desc = "terminal toggleable horizontal term";
-      }
-      {
-        action = ''
-        function()
-          require("nvchad.term").toggle { pos = "float" id = "floatTerm" }
-        end
-        '';
-        key = "<A-i>";
-        mode = "n";
-        options.desc = "terminal toggle floating term";
-      }
-      {
         action = "<cmd>WhichKey<CR>";
         key = "<leader>wK";
         mode = "n";
@@ -451,7 +385,7 @@
         options.desc = "whichkey query lookup";
       }
       {
-        action = ''
+        action.__raw = ''
         function()
           local config = { scope = {} }
           config.scope.exclude = { language = {}, node_type = {} }
@@ -471,14 +405,6 @@
         mode = "n";
         options.desc = "blankline jump to current context";
       }
-      
-      
-      
-      
-      
-      
-      
-      
     ];
   };
 }
