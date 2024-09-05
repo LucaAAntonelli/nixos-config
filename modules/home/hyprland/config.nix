@@ -282,7 +282,9 @@
         "center,title:^(Open Folder)$"
         "center,title:^(Open File)$"
         "center,title:^(Open)$" # Name of file dialog in LibreOffice
+        "center,title:^(Enter name of file to save to...)$"
         "size 850 500,title:^(Open)$"
+        "size 850 500,title:^(Enter name of file to save to...)$"
         "float,class:^(download)$"
         "float,class:^(notification)$"
         "float,class:^(error)$"
