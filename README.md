@@ -1,55 +1,48 @@
 <h1 align="center">
-   <img src="./.github/assets/logo/nixos-logo.png  " width="100px" /> 
-   <br>
-      LucaAAntonelli's Flakes 
-   <br>
-      <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
-   <div align="center">
-
-   <div align="center">
-      <p></p>
+    <img src="./.github/assets/logo/nixos-logo.png  " width="100px" /> 
+    <br>
+        LucaAAntonelli's Flakes 
+    <br>
+        <img src="./.github/assets/palette/gruvbox-pallet.png" width="600px" /> <br>
+    <div align="center">
+        <p></p>
       <div align="center">
          <a href="https://github.com/LucaAAntonelli/nixos-config/stargazers">
-            <img src="https://img.shields.io/github/stars/LucaAAntonelli/nixos-config?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
+            <img src="https://img.shields.io/github/stars/LucaAAntonelli/nixos-config?color=FABD2F&labelColor=282828&style=for-the-badge&logo=starship&logoColor=FABD2F">
          </a>
          <a href="https://github.com/LucaAAntonelli/nixos-config/">
-            <img src="https://img.shields.io/github/repo-size/LucaAAntonelli/nixos-config?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
+            <img src="https://img.shields.io/github/repo-size/LucaAAntonelli/nixos-config?color=B16286&labelColor=282828&style=for-the-badge&logo=github&logoColor=B16286">
          </a>
          <a = href="https://nixos.org">
-            <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+            <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=282828&logo=NixOS&logoColor=458588&color=458588">
          </a>
          <a href="https://github.com/LucaAAntonelli/nixos-config/blob/main/LICENSE">
-            <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=313244&colorB=F5A97F&logo=unlicense&logoColor=F5A97F&"/>
+            <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=282828&colorB=98971A&logo=unlicense&logoColor=98971A&"/>
          </a>
       </div>
       <br>
-   </div>
+    </div>
 </h1>
 
-<br>
-</div>
-
 ### 🖼️ Gallery
-
 <p align="center">
    <img src="./.github/assets/screenshots/1.png" /> <br>
    <img src="./.github/assets/screenshots/2.png" /> <br>
    <img src="./.github/assets/screenshots/3.png" /> <br>
-   Screenshots last updated <b>2024-04-09</b>
+   <img src="./.github/assets/screenshots/4.png" /> <br>
+    Screenshots last updated <b>September 3rd, 2024</b>
 </p>
 
-<details>
-<summary>
-OLD (EXPAND)
-</summary>
-<p align="center">
-   <img src="./.github/assets/screenshots/1.old.png" width="800px" /> <br>
-   <img src="./.github/assets/screenshots/2.old.png" width="800px" /> <br>
-   <img src="./.github/assets/screenshots/3.old.png" width="800px" /> <br>
-</p>
-</details>
 
 # 🗃️ Overview
+
+This is my NixOS configuration, based on [FrostPhoenix's amazing config](https://github.com/FrostPhoenix/nixos-config)
+
+### :asterisk: Main Differences
+- Home-Manager is installed as a standalone
+- The config includes NeoVim, configured with [NixVim](https://github.com/nix-community/nixvim)
+- The color scheme is Gruvbox-Dark
+There are other minor differences, mainly small changes like installed packages and extensions.
 
 ### 📚 Layout
 
@@ -60,8 +53,7 @@ OLD (EXPAND)
 -   [modules](modules) 🍱 modularized NixOS configurations
     -   [core](modules/core/) ⚙️ Core NixOS configuration
     -   [homes](modules/home/) 🏠 my [Home-Manager](https://github.com/nix-community/home-manager) config
--   [pkgs](flake/pkgs) 📦 packages exported by my flake
--   [wallpapers](wallpapers/) 🌄 wallpapers collection
+-   [wallpapers](wallpapers/) 🌄 wallpaper and lock screen images
 
 ### 📓 Components
 |                             | NixOS + Hyprland                                                                              |
@@ -79,7 +71,7 @@ OLD (EXPAND)
 | **Fonts**                   | [Nerd fonts][Nerd fonts] |
 | **Color Scheme**            | [Gruvbox-Dark][Gruvbox-Dark] |
 | **Cursor**                  | [Nordzy-cursors][Nordzy-cursors] |
-| **Icons**                   | [Gruvbox-Icons-Plus][Gruvbox-Icons-Plus] |
+| **Icons**                   | [Gruvbox-Icons][Gruvbox-Icons] + [Gruvbox-Icons-Plus][Gruvbox-Icons-Plus] |
 | **Lockscreen**              | [Swaylock-effects][Swaylock-effects] |
 | **Image Viewer**            | [imv][imv] |
 | **Media Player**            | [mpv][mpv] |
@@ -109,6 +101,8 @@ Utils (EXPAND)
 - ```l```     $\rightarrow$ ```eza --icons  -a --group-directories-first -1```
 - ```ll```    $\rightarrow$ ```eza --icons  -a --group-directories-first -1 --no-user --long```
 - ```tree```  $\rightarrow$ ```eza --icons --tree --group-directories-first```
+- ```inv```   $\rightarrow$ ```fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"```
+- ```clip```  $\rightarrow$ ```wl-copy < ```
 </details>
 
 <details>
@@ -122,7 +116,12 @@ Nixos (EXPAND)
 - ```nix-switch```       $\rightarrow$ ```sudo nixos-rebuild switch --flake ~/nixos-config#${host}```
 - ```nix-switchu```      $\rightarrow$ ```sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${host}```
 - ```nix-flake-update``` $\rightarrow$ ```sudo nix flake update ~/nixos-config#```
-- ```nix-clean```        $\rightarrow$ ```sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d```
+- ```nix-clean```        $\rightarrow$ ```nh clean all --keep 5```
+- ```nix-list```         $\rightarrow$ ```sudo nix-env --list-generations --profile /nix/var/nix/profiles/system```
+- ```hm-switch```        $\rightarrow$ ```home-manager switch --flake ~/nixos-config```
+- ```hm-list```          $\rightarrow$ ```home-manager generations```
+- ```nix-switch-all```   $\rightarrow$ ```hm-switch && nix-switch```
+- ```nix-develop```      $\rightarrow$ ```nix develop -c $SHELL```
 </details>
 
 <details>
@@ -400,6 +399,7 @@ Mouse binding
     
 
 6. **Removing OSprober**
+
    OSprober is a tool that scans drives for alternative boot options. You need this in case you are running a dual boot setup, i.e. if you're using multiple operating sstems on one device. The problem with OSprober is that it runs _every time_ you rebuild the system. Here's the alternative: 
    1. Run OSprober once and reboot your system, ensuring that the boot entries actually work
    2. Set `boot.loader.grub.useOSprober = false;`
@@ -436,21 +436,21 @@ A brief walkthrough of what the install script does.
 
 6. Choose a host (desktop / laptop)
 
-   Now you will need to choose the host you want. It depend on whether you are using a desktop or laptop.
+   Now you will need to choose the host you want. It depends on whether you are using a desktop or laptop.
 
 7. Build the system
 
-   Lastly, it will build the system, which includes both the flake config and home-manager config.
+   Finally, it will build the system, which includes both the flake config and home-manager config.
 
 # 👥 Credits
 
-Other dotfiles that I learned / copy from:
+Other dotfiles that I learned/copied from:
 
 - Nix Flakes
-  - [nomadics9/NixOS-Flake](https://github.com/nomadics9/NixOS-Flake): This is where I start my nixos / hyprland journey.
+  - [nomadics9/NixOS-Flake](https://github.com/nomadics9/NixOS-Flake): This is where I started my NixOS / hyprland journey.
   - [samiulbasirfahim/Flakes](https://github.com/samiulbasirfahim/Flakes): General flake / files structure
   - [justinlime/dotfiles](https://github.com/justinlime/dotfiles): Mainly waybar (old design)
-  - [skiletro/nixfiles](https://github.com/skiletro/nixfiles): Vscodium config (that prevent it to crash)
+  - [skiletro/nixfiles](https://github.com/skiletro/nixfiles): Vscodium config (that prevents crashing)
   - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
 
 - README
@@ -470,6 +470,9 @@ Other dotfiles that I learned / copy from:
 </div>
 
 <!-- Links -->
+[Gruvbox-Dark]: https://github.com/morhetz/gruvbox
+[Gruvbox-Icons-Plus]:https://github.com/SylEleuth/gruvbox-plus-icon-pack
+[Gruvbox-Icons]:https://www.opencode.net/adhe/gruvboxplasma
 [obsidian]: https://obsidian.md
 [Hyprland]: https://github.com/hyprwm/Hyprland
 [Kitty]: https://github.com/kovidgoyal/kitty

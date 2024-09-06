@@ -2,7 +2,7 @@
 {
   services = {
     gvfs.enable = true;
-    gnome.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = false;
     dbus.enable = true;
     fstrim.enable = true;
   };

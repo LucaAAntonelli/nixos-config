@@ -96,7 +96,7 @@ install() {
 
     # Copy the wallpapers
     echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
-    cp -r wallpapers/wallpaper.png ~/Pictures/wallpapers/others
+    cp -r wallpapers/wallpaper.png ~/Pictures/wallpapers
     cp -r wallpapers/lock-screen.png ~/Pictures/wallpapers/others
     sleep 0.2
 
@@ -105,13 +105,52 @@ install() {
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
     sleep 0.2
 
+    # General installation will be via HTTPS, not ssh -> switch
+    git remote set-url origin git@github.com:LucaAAntonelli/nixos-config.git
+
     # Last Confirmation
     echo -en "You are about to start the system build, do you want to process ? "
     confirm
 
     # Build the system (flakes + home manager)
-    echo -e "\nBuilding the system...\n"
+    echo -e "\nBuilding dotfiles with home-manager...\n"
+    nix run .#homeConfigurations.${username}@${HOST}.activationPackage --extra-experimental-features "nix-command flakes" switch
+    echo -e "\nBuilding NixOS core configuration...\n"
     sudo nixos-rebuild switch --flake .#${HOST}
+}
+
+ssh_key_handling() {
+    echo "Setting up ssh key..."
+    # Check for existing ssh keys
+    files=("id_rsa.pub" "id_ecdsa.pub" "id_ed25519.pub")
+
+    # Loop through each file
+    for file in "${files[@]}"; do
+        if [ -e "$HOME/.ssh/$file" ]; then
+            # Perform some operation when a file is found
+            echo "Found $file, copying public key to clipboard..."
+            
+            # Example operation: print the contents of the found file
+            cat "$HOME/.ssh/$file" | wl-copy
+            
+            # Exit the function after the first match
+            exit 0
+        fi
+    done
+
+    # If no file is found, generate a key and add it to the agent
+    echo "No key was found, would you like to generate one?"
+    confirm
+    echo "Please enter the email address you wish to use for the key:"
+    read email
+    echo "Use email $email?"
+    confirm
+    echo "Generating ssh key..."
+    ssh-keygen -t ed25519 -C "$email"
+    echo "Adding key to ssh-agent..."
+    ssh-add ~/.ssh/id_ed25519
+    echo "Copying key to clipboard..."
+    cat ~/.ssh/id_ed25519.pub | wl-copy
 }
 
 main() {
@@ -124,6 +163,8 @@ main() {
     get_host
 
     install
+
+    ssh_key_handling
 }
 
 main && exit 0

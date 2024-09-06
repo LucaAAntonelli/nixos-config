@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, self, username, host, ...}:
+{...}:
 {
   imports = [
     ./bootloader.nix
@@ -14,5 +14,6 @@
     ./wayland.nix
     ./fonts.nix
     ./steam.nix
+    ./nix-helper.nix
   ];
 }

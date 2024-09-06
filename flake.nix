@@ -33,21 +33,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gruvbox-starship = {
-      url = "github:fang2hou/starship-gruvbox-rainbow";
-      flake = false;
-    };
-
-
     spicetify-nix = {
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, self, ...} @ inputs:
+  outputs = { nixpkgs, self, home-manager, ...} @ inputs:
   let
-    selfPkgs = import ./pkgs;
     username = "luca";
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -57,20 +50,33 @@
     lib = nixpkgs.lib;
   in
   {
-    overlays.default = selfPkgs.overlay;
-
-    extraSpecialArgs = { inherit inputs; };
 
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ (import ./hosts/desktop) ];
-        specialArgs = { host="desktop"; inherit self inputs username ; };
+        modules = [
+          (import ./hosts/desktop) ];
+        specialArgs = { host = "desktop"; inherit self inputs username ; };
       };
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ (import ./hosts/laptop) ];
-        specialArgs = { host="laptop"; inherit self inputs username ; };
+        modules = [
+          (import ./hosts/laptop) ];
+        specialArgs = { host = "laptop"; inherit self inputs username ; };
+      };
+    };
+
+    homeConfigurations = {
+      "${username}@laptop" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./modules/home ];
+        extraSpecialArgs = { host = "laptop"; inherit self inputs username; };
+      };
+
+      "${username}@desktop" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./modules/home ];
+        extraSpecialArgs = { host = "desktop"; inherit self inputs username; };
       };
     };
   };

@@ -1,4 +1,5 @@
-{inputs, username, host, ...}: {
+{...}: 
+{
   imports = [
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor 
@@ -20,6 +21,13 @@
     ./vscodium.nix                    # vscode forck
     ./tmux.nix                        # tmux
     ./waybar                          # status bar
-    ./zsh.nix
-  ];                      # shell
+    ./zsh.nix                         # shell
+  ];
+  nixpkgs.config.allowUnfree = true;
+  home = {
+    username = "luca";
+    homeDirectory = "/home/luca";
+    stateVersion = "24.05";
+  };
+  programs.home-manager.enable = true;
 }
