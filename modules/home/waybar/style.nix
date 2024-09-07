@@ -45,7 +45,7 @@ in
         color: #ebdbb2;
     }
 
-    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery, #custom-notification, #bluetooth, #custom-gpu {
+    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery, #custom-notification, #bluetooth {
         font-size: ${custom.font_size};
         color: ${custom.text_color};
     }
@@ -54,12 +54,6 @@ in
         padding-left: 7px;
         padding-right: 9px;
         margin-left: 7px;
-    }
-
-    #custom-gpu {
-      padding-left: 7px;
-      padding-right: 9px;
-      margin-left: 7px;
     }
 
     #memory {
