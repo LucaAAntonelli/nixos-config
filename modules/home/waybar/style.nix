@@ -55,6 +55,7 @@ in
         padding-right: 9px;
         margin-left: 7px;
     }
+
     #memory {
         padding-left: 9px;
         padding-right: 9px;

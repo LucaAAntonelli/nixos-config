@@ -19,6 +19,7 @@
         "tray" 
         "bluetooth"
         "cpu"
+        "custom/gpu"
         "memory"
         "disk"
         "pulseaudio" 
