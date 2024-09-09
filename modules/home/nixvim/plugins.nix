@@ -70,13 +70,16 @@
         };
       };
       direnv.enable = true;
+      nvim-colorizer = {
+        enable = true;
+        userDefaultOptions.names = false;
+      };
     };
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
       cmp-nvim-lsp
       conform-nvim
       vim-tmux-navigator
-      nvim-colorizer-lua
     ];
   };
 }

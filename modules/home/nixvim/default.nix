@@ -15,7 +15,6 @@
     extraConfigLuaPre = ''
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
-      require 'colorizer'.setup()
     '';
     extraConfigLua = ''
       vim.opt.whichwrap:append("<>[]hl")
