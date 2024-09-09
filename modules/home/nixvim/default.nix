@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
 
   imports = [ 
     inputs.nixvim.homeManagerModules.nixvim
@@ -9,10 +9,13 @@
   programs.nixvim = {
     enable = true;
     vimAlias = true;
-    colorschemes.gruvbox.enable = true;
+    colorschemes.gruvbox = {
+      enable = true;
+    };
     extraConfigLuaPre = ''
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
+      require 'colorizer'.setup()
     '';
     extraConfigLua = ''
       vim.opt.whichwrap:append("<>[]hl")

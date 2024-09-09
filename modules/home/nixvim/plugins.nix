@@ -76,6 +76,7 @@
       cmp-nvim-lsp
       conform-nvim
       vim-tmux-navigator
+      nvim-colorizer-lua
     ];
   };
 }

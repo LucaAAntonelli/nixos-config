@@ -25,16 +25,17 @@
 
       palette = "gruvbox_dark";
       palettes.gruvbox_dark = {
-        color_fg0 = "#fbf1c7";
+        color_fg0 = "#CDC09F";
+        color_fg1 = "#4E4E4E";
         color_bg1 = "#3c3836";
-        color_bg3 = "#665c54";
+        color_bg3 = "#3A3A3A";
         color_blue = "#458588";
         color_aqua = "#689d6a";
         color_green = "#98971a";
         color_orange = "#d65d0e";
         color_purple = "#b16286";
         color_red = "#cc241d";
-        color_yellow = "#d79921";
+        color_yellow = "#FFAF00";
       };
 
       os = {
@@ -46,7 +47,7 @@
       };
 
       directory = {
-        style = "bold fg:color_fg0 bg:color_yellow";
+        style = "bold fg:color_fg1 bg:color_yellow";
         format = "[ $path ]($style)";
         truncation_length = 3;
       };
