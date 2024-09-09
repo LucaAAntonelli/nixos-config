@@ -7,7 +7,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf" "tmux" ];
+      plugins = [ "git" "fzf" "tmux" "bgnotify" ];
     };
     initExtraFirst = ''
       DISABLE_MAGIC_FUNCTIONS=true
