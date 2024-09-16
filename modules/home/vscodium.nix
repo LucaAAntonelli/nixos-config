@@ -9,7 +9,7 @@
       # nix-shell suport 
       arrterian.nix-env-selector
       # python
-      ms-python.python
+      # ms-python.python
       
       # Rust
       rust-lang.rust-analyzer
