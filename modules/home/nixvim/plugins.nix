@@ -80,6 +80,7 @@
       cmp-nvim-lsp
       conform-nvim
       vim-tmux-navigator
+      gruvbox
     ];
   };
 }
