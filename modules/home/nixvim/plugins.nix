@@ -74,6 +74,7 @@
         enable = true;
         userDefaultOptions.names = false;
       };
+      crates-nvim.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
