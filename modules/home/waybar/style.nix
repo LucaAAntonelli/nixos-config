@@ -66,8 +66,8 @@ in
     }
 
     #tray {
-        padding: 0 10px;
-        margin-left: 7px;
+        padding-left: 35px;
+        padding-right: 15px;
     }
 
     #bluetooth {
