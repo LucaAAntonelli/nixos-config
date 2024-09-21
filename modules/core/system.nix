@@ -25,6 +25,7 @@
     git
     owncloud-client
     thunderbird
+    birdtray # Thunderbird tray icon
   ];
 
   time.timeZone = "Europe/Zurich";
