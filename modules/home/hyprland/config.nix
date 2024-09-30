@@ -305,17 +305,36 @@
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
-
-        "workspace 1,class:^(floorp)$"
-        "workspace 2,class:^(kitty)$"
-        "workspace 3,class:^(VSCodium)"
-        "workspace 4,class:^(obsidian)"
-        "workspace 5,class:^(Spotify)"
       ];
+      
+      # On desktop: workspaces 1-5 on left screen, 6-10 on right
+      workspace = if host == "desktop" then [
+        "workspace = 1, monitor: HDMI-A-2"
+        "workspace = 2, monitor: HDMI-A-2"
+        "workspace = 3, monitor: HDMI-A-2"
+        "workspace = 4, monitor: HDMI-A-2"
+        "workspace = 5, monitor: HDMI-A-2"
+
+        "workspace = 6, monitor: HDMI-A-1"
+        "workspace = 7, monitor: HDMI-A-1"
+        "workspace = 8, monitor: HDMI-A-1"
+        "workspace = 9, monitor: HDMI-A-1"
+        "workspace = 10, monitor: HDMI-A-1"
+      ] else [] ;
 
     };
 
     # Import extraConfig from host-specific folder -> Screen setup is different between hosts
-    extraConfig = builtins.import ./../../../hosts/${host}/screens.nix;
+    extraConfig = if host == "desktop" then ''
+      monitor=HDMI-A-2, preferred, 0x0, auto
+      monitor=HDMI-A-1, preferred, 3840x260, auto
+    '' else ''
+      monitor=HDMI-A-1,disable
+      monitor=,preferred,auto,auto
+
+      xwayland {
+        force_zero_scaling = true
+      }
+    '';
   };
 }
