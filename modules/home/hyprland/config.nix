@@ -18,8 +18,7 @@
         "swaync &"
         "wl-paste --watch cliphist store &"
         "hyprlock &"
-        "owncloud &"
-        "birdtray"
+        "owncloud"
       ];
 
       input = {
