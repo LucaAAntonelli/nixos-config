@@ -1,4 +1,4 @@
-{ ... }:
+{host, lib, ... }:
 {
   programs.waybar.settings.mainBar = {
     position= "top";
@@ -66,10 +66,14 @@
             default = "";
             sort-by-number= true;
         };
-        persistent-workspaces = {
+        persistent-workspaces = lib.mkMerge [
+          {
             "1"= [];
-            "6"= [];
-        };
+          }
+          (lib.optionalAttrs(host == "desktop"){
+            "6" = [];
+           })
+        ];
     };
     memory= {
         format= "󰟜 {:2}%";
