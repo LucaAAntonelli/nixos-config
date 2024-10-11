@@ -308,17 +308,17 @@
       
       # On desktop: workspaces 1-5 on left screen, 6-10 on right
       workspace = if host == "desktop" then [
-        "workspace = 1, monitor: HDMI-A-2"
-        "workspace = 2, monitor: HDMI-A-2"
-        "workspace = 3, monitor: HDMI-A-2"
-        "workspace = 4, monitor: HDMI-A-2"
-        "workspace = 5, monitor: HDMI-A-2"
+        "workspace = 1, monitor: HDMI-A-1"
+        "workspace = 2, monitor: HDMI-A-1"
+        "workspace = 3, monitor: HDMI-A-1"
+        "workspace = 4, monitor: HDMI-A-1"
+        "workspace = 5, monitor: HDMI-A-1"
 
-        "workspace = 6, monitor: HDMI-A-1"
-        "workspace = 7, monitor: HDMI-A-1"
-        "workspace = 8, monitor: HDMI-A-1"
-        "workspace = 9, monitor: HDMI-A-1"
-        "workspace = 10, monitor: HDMI-A-1"
+        "workspace = 6, monitor: HDMI-A-2"
+        "workspace = 7, monitor: HDMI-A-2"
+        "workspace = 8, monitor: HDMI-A-2"
+        "workspace = 9, monitor: HDMI-A-2"
+        "workspace = 10, monitor: HDMI-A-2"
       ] else [] ;
 
     };
