@@ -4,6 +4,7 @@
       bufferline.enable = true;
       lualine.enable = true;
       nvim-autopairs.enable = true;
+      web-devicons.enable = true;
       nvim-tree = {
         enable = true;
         disableNetrw = true;
@@ -29,10 +30,10 @@
       lsp = {
         enable = true;
         servers = {
-          lua-ls.enable = true;
+          lua_ls.enable = true;
           nixd.enable = true; # nix LSP
           html.enable = true;
-          rust-analyzer = {
+          rust_analyzer = {
             enable = true;
             installCargo = true;
             installRustc = true;
@@ -77,7 +78,6 @@
       crates-nvim.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
-      nvim-web-devicons
       cmp-nvim-lsp
       conform-nvim
       vim-tmux-navigator
