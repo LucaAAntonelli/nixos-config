@@ -43,6 +43,7 @@
     unzip
     wget
     xdg-utils
+    openfortivpn                      # VPN client
     inputs.alejandra.defaultPackage.${system}
   ]);
 }

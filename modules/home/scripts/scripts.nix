@@ -17,7 +17,9 @@
   shutdown-script = pkgs.writeScriptBin "shutdown-script" (builtins.readFile ./scripts/shutdown-script.sh);
   
   show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
-  
+ 
+  connect-vpn = pkgs.writeScriptBin "connect-vpn" (builtins.readFile ./scripts/connect_vpn.sh);
+
 in {
   home.packages = with pkgs; [
     wall-change
@@ -39,7 +41,7 @@ in {
     
     show-keybinds
 
-
+    connect-vpn
 
   ];
 }
