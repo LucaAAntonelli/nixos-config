@@ -8,4 +8,5 @@
     # pinentryFlavor = "";
   };
   programs.nix-ld.enable = true;
+  programs.kdeconnect.enable = true;
 }
