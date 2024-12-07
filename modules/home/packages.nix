@@ -45,5 +45,6 @@
     xdg-utils
     openfortivpn                      # VPN client
     inputs.alejandra.defaultPackage.${system}
+    inputs.book-app.defaultPackage.${system}.default
   ]);
 }
