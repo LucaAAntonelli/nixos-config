@@ -39,6 +39,15 @@
     };
 
     book-app.url = "github:LucaAAntonelli/book-app";
+
+    # IMPORTANT: This only works if the command sudo ssh -T git@github.com 
+    # can be executed (root needs to have ssh access to the private repo!)
+    # This can be achieved by copying the ~/.ssh directory to /root/.ssh
+    # and adding the necessary permissions for the root user
+    secrets = {
+      url = "git+ssh://git@github.com/LucaAAntonelli/nix-secrets.git?ref=main";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, self, home-manager, ...} @ inputs:
