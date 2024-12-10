@@ -1000,6 +1000,7 @@
         "nixpkgs": "nixpkgs_8",
         "nixvim": "nixvim",
         "nur": "nur",
+        "secrets": "secrets",
         "spicetify-nix": "spicetify-nix"
       }
     },
@@ -1018,6 +1019,23 @@
         "ref": "nightly",
         "repo": "rust-analyzer",
         "type": "github"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733650206,
+        "narHash": "sha256-Nzo2UM+0kaIH3c6AV6e1dS4GJv6ebJNsnj6Y8H6AWok=",
+        "ref": "main",
+        "rev": "b85f644bce770acaec49c2ea8e8590b0cb23fcde",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/LucaAAntonelli/nix-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "ssh://git@github.com/LucaAAntonelli/nix-secrets.git"
       }
     },
     "spicetify-nix": {
