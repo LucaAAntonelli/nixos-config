@@ -1,4 +1,4 @@
-{ host, username, ... }: 
+{ pkgs, host, username, ... }: 
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -16,7 +16,11 @@
     isNormalUser = true;
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
+
+# Add zsh program here too
+programs.zsh.enable = true;
 
 # Enable automatic login for the user.
   services.getty.autologinUser = "luca";

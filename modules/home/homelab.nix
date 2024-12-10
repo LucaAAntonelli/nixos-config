@@ -1,4 +1,4 @@
-{ username, ... }: 
+{ pkgs, username, ... }: 
 {
   imports = [
     ./bat.nix
@@ -13,6 +13,10 @@
     username = "${username}";
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
+    packages = (with pkgs; [
+      fzf
+      direnv
+    ]);
   };
   programs.home-manager.enable = true;
 }
