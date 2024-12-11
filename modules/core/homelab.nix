@@ -1,5 +1,6 @@
-{ pkgs, host, username, ... }: 
-{
+{ config, pkgs, host, username, ... }: 
+let domain = "headscale";
+in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -19,8 +20,34 @@
     shell = pkgs.zsh;
   };
 
-# Add zsh program here too
-programs.zsh.enable = true;
+  # Add zsh program here too
+  programs.zsh.enable = true;
+
+  # Add headscale server
+  services = {
+    headscale = {
+      enable = true;
+      address = "0.0.0.0";
+      port = 8080;
+      settings = {
+        logtail.enable = false;
+        dns = {
+          base_domain = "example.com";
+        };
+        server_url = "https://${domain}";
+      };
+    };
+    nginx.virtualHosts.${domain} = {
+      forceSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "https://localhost:${toString config.services.headscale.port}";
+        proxyWebsockets = true;
+      };
+    };
+  };
+
+  environment.systemPackages = [ config.services.headscale.package ];
 
 # Enable automatic login for the user.
   services.getty.autologinUser = "luca";
