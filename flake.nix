@@ -37,6 +37,17 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    book-app.url = "github:LucaAAntonelli/book-app";
+
+    # IMPORTANT: This only works if the command sudo ssh -T git@github.com 
+    # can be executed (root needs to have ssh access to the private repo!)
+    # This can be achieved by copying the ~/.ssh directory to /root/.ssh
+    # and adding the necessary permissions for the root user
+    secrets = {
+      url = "git+ssh://git@github.com/LucaAAntonelli/nix-secrets.git?ref=main";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, self, home-manager, ...} @ inputs:
@@ -64,6 +75,12 @@
           (import ./hosts/laptop) ];
         specialArgs = { host = "laptop"; inherit self inputs username ; };
       };
+      homelab = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          (import ./hosts/homelab) ];
+        specialArgs = { host = "homelab"; inherit self inputs username ;};
+      };
     };
 
     homeConfigurations = {
@@ -77,6 +94,11 @@
         inherit pkgs;
         modules = [ ./modules/home ];
         extraSpecialArgs = { host = "desktop"; inherit self inputs username; };
+      };
+      "${username}@homelab" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./modules/home/homelab.nix ];
+        extraSpecialArgs = { host = "homelab"; inherit self inputs username; };
       };
     };
   };
