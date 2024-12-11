@@ -22,7 +22,6 @@
     ./tmux.nix                        # tmux
     ./waybar                          # status bar
     ./zsh.nix                         # shell
-    ./tailscale-client.nix            # tailscale client
   ];
   nixpkgs.config.allowUnfree = true;
   home = {
