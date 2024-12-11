@@ -1,5 +1,5 @@
 { config, pkgs, host, username, ... }: 
-let domain = "headscale";
+let domain = "badidea.com";
 in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
