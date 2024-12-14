@@ -44,7 +44,10 @@
     wget
     xdg-utils
     openfortivpn                      # VPN client
+    sops
+    age
+    ssh-to-age
     inputs.alejandra.defaultPackage.${system}
-    inputs.book-app.defaultPackage.${system}.default
+    # inputs.book-app.defaultPackage.${system}
   ]);
 }
