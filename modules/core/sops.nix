@@ -19,7 +19,9 @@ in
       generateKey = true;
     };
     secrets = {
-      domain = {};
+      domain = {
+        owner = "${username}";
+      };
     };
   };
 }
