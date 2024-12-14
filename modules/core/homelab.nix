@@ -27,23 +27,25 @@ in {
   services = {
     headscale = {
       enable = true;
-      address = "0.0.0.0";
-      port = 8080;
       settings = {
-        logtail.enable = false;
-        dns = {
-          base_domain = "example.com";
-        };
-        server_url = "https://${domain}";
+        server_url = "${domain}";
+        grpc_listen_addr = "127.0.0.1:9090";
+        admin_listen_addr = "127.0.0.1:9091";
       };
     };
     nginx.virtualHosts.${domain} = {
       forceSSL = true;
       enableACME = true;
-      locations."/" = {
-        proxyPass = "https://localhost:${toString config.services.headscale.port}";
-        proxyWebsockets = true;
-      };
+      locations = [
+        {
+          path = "/";
+          proxyPass = "https://127.0.0.1:8080";
+        }
+        {
+          path = "/register";
+          proxyPass = "https://127.0.0.1:8080/register";
+        }
+      ];
     };
   };
 
@@ -71,6 +73,16 @@ in {
   # Enable tailscale for remote access
   services.tailscale = {
     enable = true;
+  };
+
+  security.acme = {
+    acceptTerms = true;
+    email = "luca.antonelli@gmx.ch";
+    certs = {
+      "${domain}" = {
+        webroot = "/var/www/acme";
+      };
+    };
   };
   
   # This value determines the NixOS release from which the default
