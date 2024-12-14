@@ -1,6 +1,9 @@
 { config, pkgs, host, username, ... }: 
 let domain = "badidea.com";
 in {
+  imports = [
+    ./sops.nix
+  ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -28,7 +31,7 @@ in {
     headscale = {
       enable = true;
       settings = {
-        server_url = "${domain}";
+        server_url = "cat ${config.sops.secrets.domain.path}";
         grpc_listen_addr = "127.0.0.1:9090";
         admin_listen_addr = "127.0.0.1:9091";
       };
