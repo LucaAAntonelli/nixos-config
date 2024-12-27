@@ -48,6 +48,10 @@
       url = "git+ssh://git@github.com/LucaAAntonelli/nix-secrets.git?ref=main";
       flake = false;
     };
+    
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+    };
   };
 
   outputs = { nixpkgs, self, home-manager, ...} @ inputs:
