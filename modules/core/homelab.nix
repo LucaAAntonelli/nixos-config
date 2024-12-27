@@ -1,6 +1,9 @@
-{ config, pkgs, host, username, ... }: 
-let domain = "badidea.com";
-in {
+{ pkgs, host, username, config, ... }: 
+{
+  imports = [
+    ./sops.nix
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -23,34 +26,42 @@ in {
   # Add zsh program here too
   programs.zsh.enable = true;
 
-  # Add headscale server
-  services = {
-    headscale = {
-      enable = true;
-      address = "0.0.0.0";
-      port = 8080;
-      settings = {
-        logtail.enable = false;
-        dns = {
-          base_domain = "example.com";
-        };
-        server_url = "https://${domain}";
-      };
-    };
-    nginx.virtualHosts.${domain} = {
-      forceSSL = true;
-      enableACME = true;
-      locations."/" = {
-        proxyPass = "https://localhost:${toString config.services.headscale.port}";
-        proxyWebsockets = true;
+  environment.systemPackages = [ pkgs.tailscale ];
+
+  services.tailscale.enable = true;
+
+  environment.etc."nextcloud-admin-pass".text = "asdf";
+  services.nextcloud = {
+    enable = true;
+    package = pkgs.nextcloud30;
+    hostName = "nextcloud.lucaantonelli.xyz";
+    config.adminuser = username;
+    config.adminpassFile = config.sops.secrets.nextcloud-admin-pass.path;
+    database.createLocally = true;
+    configureRedis = true;
+    https = true;
+
+  };
+
+  services.nginx = {
+    enable = true;
+
+    virtualHosts = {
+      "nextcloud.lucaantonelli.xyz" = {
+        forceSSL = true;
+        enableACME = true;
       };
     };
   };
 
-  environment.systemPackages = [ config.services.headscale.package ];
+  security.acme = {
+    defaults.email = "luca.antonelli@gmx.ch";
+    acceptTerms = true;
+  };
+
 
 # Enable automatic login for the user.
-  services.getty.autologinUser = "luca";
+  services.getty.autologinUser = username;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -61,17 +72,15 @@ in {
 
   services.openssh = {
     enable = true;
-    permitRootLogin = "yes";
-    passwordAuthentication = true;
+    settings = {
+      PermitRootLogin = "yes";
+      PasswordAuthentication = true;
+    };
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
 
-  # Enable tailscale for remote access
-  services.tailscale = {
-    enable = true;
-  };
   
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
