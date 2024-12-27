@@ -3,7 +3,6 @@
   imports = [
     ./sops.nix
   ];
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -30,7 +29,6 @@
 
   services.tailscale.enable = true;
 
-  environment.etc."nextcloud-admin-pass".text = "asdf";
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud30;
@@ -80,8 +78,7 @@
   };
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
-
-  
+ 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
