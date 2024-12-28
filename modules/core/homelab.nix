@@ -48,6 +48,12 @@
       ROCKET_PORT = 8222;
     };
   };
+
+  services.immich = {
+    enable = true;
+    port = 2283;
+  };
+
   services.nginx = {
     enable = true;
     recommendedGzipSettings = true;
@@ -57,11 +63,21 @@
         forceSSL = true;
         enableACME = true;
       };
+
       "bitwarden.${inputs.secrets.domain}" = {
         enableACME = true;
         forceSSL = true;
         locations."/" = {
           proxyPass = "http://${toString config.services.vaultwarden.config.ROCKET_ADDRESS}:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+        };
+      };
+
+      "immich.${inputs.secrets.domain}" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://[::1]:${toString config.services.immich.port}";
+          proxyWebsockets = true;
         };
       };
     };
