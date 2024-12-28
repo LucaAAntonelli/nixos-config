@@ -46,7 +46,7 @@
     # and adding the necessary permissions for the root user
     secrets = {
       url = "git+ssh://git@github.com/LucaAAntonelli/nix-secrets.git?ref=main";
-      flake = false;
+      inputs = { };
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";

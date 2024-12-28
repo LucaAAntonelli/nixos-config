@@ -1,4 +1,4 @@
-{ pkgs, host, username, config, ... }: 
+{ pkgs, host, username, config, inputs, ... }: 
 {
   imports = [
     ./sops.nix
@@ -32,7 +32,8 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud30;
-    hostName = "nextcloud.lucaantonelli.xyz";
+    hostName = "nextcloud.${inputs.secrets.domain}";
+    # hostName = "nextcloud.lucaantonelli.xyz";
     config.adminuser = username;
     config.adminpassFile = config.sops.secrets.nextcloud-admin-pass.path;
     database.createLocally = true;
@@ -45,7 +46,8 @@
     enable = true;
 
     virtualHosts = {
-      "nextcloud.lucaantonelli.xyz" = {
+      "nextcloud.${inputs.secrets.domain}" = {
+      # "nextcloud.lucaantonelli.xyz" = {
         forceSSL = true;
         enableACME = true;
       };
