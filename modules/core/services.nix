@@ -6,6 +6,7 @@
     dbus.enable = true;
     fstrim.enable = true;
     printing.enable = true;
+    tailscale.enable = true;
     avahi = {
       enable = true;
       nssmdns4 = true;
