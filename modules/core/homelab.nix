@@ -33,7 +33,6 @@
     enable = true;
     package = pkgs.nextcloud30;
     hostName = "nextcloud.${inputs.secrets.domain}";
-    # hostName = "nextcloud.lucaantonelli.xyz";
     config.adminuser = username;
     config.adminpassFile = config.sops.secrets.nextcloud-admin-pass.path;
     database.createLocally = true;
@@ -42,20 +41,34 @@
 
   };
 
+  services.vaultwarden = {
+    enable = true;
+    config = {
+      ROCKET_ADDRESS = "127.0.0.1";
+      ROCKET_PORT = 8222;
+    };
+  };
   services.nginx = {
     enable = true;
+    recommendedGzipSettings = true;
 
     virtualHosts = {
       "nextcloud.${inputs.secrets.domain}" = {
-      # "nextcloud.lucaantonelli.xyz" = {
         forceSSL = true;
         enableACME = true;
+      };
+      "bitwarden.${inputs.secrets.domain}" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://${toString config.services.vaultwarden.config.ROCKET_ADDRESS}:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+        };
       };
     };
   };
 
   security.acme = {
-    defaults.email = "luca.antonelli@gmx.ch";
+    defaults.email = inputs.secrets.email;
     acceptTerms = true;
   };
 
