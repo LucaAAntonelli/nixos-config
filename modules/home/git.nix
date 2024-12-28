@@ -1,10 +1,10 @@
-{ ... }: 
+{inputs, ... }: 
 {
   programs.git = {
     enable = true;
     
     userName = "Luca";
-    userEmail = "luca.antonelli@gmx.ch";
+    userEmail = inputs.secrets.email;
     
     extraConfig = { 
       init.defaultBranch = "main";
