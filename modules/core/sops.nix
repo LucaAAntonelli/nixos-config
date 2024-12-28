@@ -1,5 +1,5 @@
-{inputs, username, ...}: 
-let 
+{inputs, username, pkgs, ...}: 
+let
   secretspath = builtins.toString inputs.secrets;
 in
 {
@@ -19,9 +19,14 @@ in
       generateKey = true;
     };
     secrets = {
-      domain = {
-        owner = "${username}";
+      nextcloud-admin-pass = {
+        owner = "nextcloud";
+        group = "nextcloud";
       };
     };
   };
+
+  environment.systemPackages = [
+    pkgs.sops
+  ];
 }

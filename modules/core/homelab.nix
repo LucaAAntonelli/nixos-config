@@ -1,6 +1,5 @@
-{ config, pkgs, host, username, ... }: 
-let domain = "badidea.com";
-in {
+{ pkgs, host, username, config, ... }: 
+{
   imports = [
     ./sops.nix
   ];
@@ -26,36 +25,41 @@ in {
   # Add zsh program here too
   programs.zsh.enable = true;
 
-  # Add headscale server
-  services = {
-    headscale = {
-      enable = true;
-      settings = {
-        server_url = "cat ${config.sops.secrets.domain.path}";
-        grpc_listen_addr = "127.0.0.1:9090";
-        admin_listen_addr = "127.0.0.1:9091";
+  environment.systemPackages = [ pkgs.tailscale ];
+
+  services.tailscale.enable = true;
+
+  services.nextcloud = {
+    enable = true;
+    package = pkgs.nextcloud30;
+    hostName = "nextcloud.lucaantonelli.xyz";
+    config.adminuser = username;
+    config.adminpassFile = config.sops.secrets.nextcloud-admin-pass.path;
+    database.createLocally = true;
+    configureRedis = true;
+    https = true;
+
+  };
+
+  services.nginx = {
+    enable = true;
+
+    virtualHosts = {
+      "nextcloud.lucaantonelli.xyz" = {
+        forceSSL = true;
+        enableACME = true;
       };
-    };
-    nginx.virtualHosts.${domain} = {
-      forceSSL = true;
-      enableACME = true;
-      locations = [
-        {
-          path = "/";
-          proxyPass = "https://127.0.0.1:8080";
-        }
-        {
-          path = "/register";
-          proxyPass = "https://127.0.0.1:8080/register";
-        }
-      ];
     };
   };
 
-  environment.systemPackages = [ config.services.headscale.package ];
+  security.acme = {
+    defaults.email = "luca.antonelli@gmx.ch";
+    acceptTerms = true;
+  };
+
 
 # Enable automatic login for the user.
-  services.getty.autologinUser = "luca";
+  services.getty.autologinUser = username;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -66,28 +70,15 @@ in {
 
   services.openssh = {
     enable = true;
-    permitRootLogin = "yes";
-    passwordAuthentication = true;
+    settings = {
+      PermitRootLogin = "yes";
+      PasswordAuthentication = true;
+    };
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  # Enable tailscale for remote access
-  services.tailscale = {
-    enable = true;
-  };
-
-  security.acme = {
-    acceptTerms = true;
-    email = "luca.antonelli@gmx.ch";
-    certs = {
-      "${domain}" = {
-        webroot = "/var/www/acme";
-      };
-    };
-  };
-  
+  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
+ 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
