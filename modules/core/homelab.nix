@@ -69,6 +69,20 @@
   # Enable experimental features
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # Enable fail2ban to prevent DDOS attacks
+  services.fail2ban = {
+    enable = true;
+    ignoreIP = [
+      "192.168.1.189/24"
+      "192.168.1.158/24"
+      "192.168.1.225/24"
+      "100.112.125.65"
+      "100.92.240.23"
+      "100.70.195.51"
+    ];
+    extraPackages = [ pkgs.ipset ];  
+    banaction = "iptables-ipset-proto6-allports";  
+  };
 
   services.openssh = {
     enable = true;
