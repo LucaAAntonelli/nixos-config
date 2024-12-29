@@ -1,7 +1,4 @@
 { pkgs, inputs, ...}: 
-let 
-  openfortivpn-webview = pkgs.callPackage ./openfortivpn-webview.nix {};
-in
 {
   # imports = [ inputs.nix-gaming.nixosModules.default ];
   nix = {
@@ -28,8 +25,6 @@ in
     git
     owncloud-client
     thunderbird
-    openfortivpn-webview
-    remmina
   ];
 
   time.timeZone = "Europe/Zurich";

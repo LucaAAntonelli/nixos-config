@@ -43,7 +43,6 @@
     unzip
     wget
     xdg-utils
-    openfortivpn                      # VPN client
     # sops
     age
     ssh-to-age
