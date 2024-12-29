@@ -133,11 +133,6 @@
   # Enable fail2ban to prevent DDOS attacks
   services.fail2ban = {
     enable = true;
-    ignoreIP = [
-      "192.168.1.189/24"
-      "192.168.1.158/24"
-      "192.168.1.225/24"
-    ];
     extraPackages = [ pkgs.ipset ];  
     banaction = "iptables-ipset-proto6-allports";
     jails = {
