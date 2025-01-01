@@ -1,7 +1,7 @@
 { pkgs, host, username, inputs, ... }: 
 {
   imports = [
-    ./services/sops.nix
+    ./sops.nix
     ./services/nginx.nix
     ./services/immich.nix
     ./services/fail2ban.nix
