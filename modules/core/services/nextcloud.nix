@@ -1,4 +1,4 @@
-{pkgs, username, inputs, config, ... }: 
+{pkgs, username, inputs, config, lib, ... }: 
 {
   services.nextcloud = {
     enable = true;
@@ -9,6 +9,14 @@
     database.createLocally = true;
     configureRedis = true;
     settings.trusted_domains = [ "nextcloud.${inputs.secrets.domain}" ];
+    settings.max_chunk_size = 50000000;
+    phpOptions = {
+      max_chunk_size = 50000000;
+      memory_limit = lib.mkForce "512M";
+      upload_max_size = "16G";
+      post_max_size = "16G";
+    };
+    maxUploadSize = "16G"; 
 
   };
 }

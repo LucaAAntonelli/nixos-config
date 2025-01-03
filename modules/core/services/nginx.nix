@@ -2,7 +2,7 @@
 {
   services.nginx = {
     enable = true;
-    recommendedGzipSettings = true;
+    # recommendedGzipSettings = true;
 
     virtualHosts = {
       "192.168.1.212" = {
