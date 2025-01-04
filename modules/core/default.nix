@@ -15,6 +15,7 @@
     ./fonts.nix
     ./steam.nix
     ./nix-helper.nix
-    ./tailscale-client.nix            # tailscale client
+    ./tailscale-client.nix
+    ./sops.nix
   ];
 }

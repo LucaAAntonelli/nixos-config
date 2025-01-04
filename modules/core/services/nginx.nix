@@ -2,41 +2,34 @@
 {
   services.nginx = {
     enable = true;
-    recommendedGzipSettings = true;
+    # recommendedGzipSettings = true;
 
     virtualHosts = {
-      "nextcloud.${inputs.secrets.domain}" = {
-        forceSSL = true;
-        enableACME = true;
-        extraConfig = ''
-          access_log /var/log/nginx/nextcloud.access.log;
-          error_log /var/log/nginx/nextcloud.error.log;
-        '';
+      "192.168.1.212" = {
+        listen = [
+          {
+            addr = "192.168.1.212";
+            port = 8080;
+          }
+        ];
       };
 
       "bitwarden.${inputs.secrets.domain}" = {
         enableACME = true;
         forceSSL = true;
         locations."/" = {
-          proxyPass = "http://${toString config.services.vaultwarden.config.ROCKET_ADDRESS}:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+          proxyPass = "http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+          proxyWebsockets = true;
         };
-        extraConfig = ''
-          access_log /var/log/nginx/bitwarden.access.log;
-          error_log /var/log/nginx/bitwarden.error.log;
-        '';
       };
 
       "immich.${inputs.secrets.domain}" = {
         enableACME = true;
         forceSSL = true;
         locations."/" = {
-          proxyPass = "http://[::1]:${toString config.services.immich.port}";
+          proxyPass = "http://127.0.0.1:${toString config.services.immich.port}";
           proxyWebsockets = true;
         };
-        extraConfig = ''
-          access_log /var/log/nginx/immich.access.log;
-          error_log /var/log/nginx/immich.error.log;
-        '';
       };
     };
   };

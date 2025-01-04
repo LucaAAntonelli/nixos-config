@@ -1,12 +1,13 @@
 { pkgs, host, username, inputs, ... }: 
 {
   imports = [
-    ./services/sops.nix
+    ./sops.nix
     ./services/nginx.nix
     ./services/immich.nix
     ./services/fail2ban.nix
     ./services/nextcloud.nix
     ./services/vaultwarden.nix
+    ./services/cloudflared.nix
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -57,7 +58,7 @@
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 2283 8080 8222];
  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
