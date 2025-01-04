@@ -29,7 +29,9 @@
     fonts = {
         fontDir.enable = true;
         packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
+        # (nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.noto
         sn-pro
         ];
     };
