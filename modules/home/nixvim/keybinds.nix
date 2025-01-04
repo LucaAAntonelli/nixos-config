@@ -2,6 +2,12 @@
   programs.nixvim = {
     keymaps = [
       {
+        action = "<ESC>";
+        key = "jj";
+        mode = "i";
+        options.desc = "escape insert mode";
+      }
+      {
         action = "<ESC>^i";
         key = "<C-b>";
         mode = "i";
