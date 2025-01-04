@@ -1,4 +1,4 @@
-{ ... }: 
+{  ... }: 
 {
   programs.kitty = {
     enable = true;
@@ -6,7 +6,7 @@
     themeFile = "gruvbox-dark";
 
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "JetBrainsMono";
       size = 13;
     };
 
