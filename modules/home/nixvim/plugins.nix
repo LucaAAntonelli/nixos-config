@@ -71,11 +71,11 @@
         };
       };
       direnv.enable = true;
-      nvim-colorizer = {
+      colorizer = {
         enable = true;
-        userDefaultOptions.names = false;
+        settings.user_default_options.names = false;
       };
-      crates-nvim.enable = true;
+      crates.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       cmp-nvim-lsp
