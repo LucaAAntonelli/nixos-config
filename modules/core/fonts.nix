@@ -11,7 +11,6 @@
         aggregatedIcons = pkgs.buildEnv {
         name = "system-icons";
         paths = with pkgs; [
-            #libsForQt5.breeze-qt5  # for plasma
             gnome-themes-extra
         ];
         pathsToLink = [ "/share/icons" ];
@@ -29,7 +28,6 @@
     fonts = {
         fontDir.enable = true;
         packages = with pkgs; [
-        # (nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
         nerd-fonts.jetbrains-mono
         nerd-fonts.noto
         sn-pro
