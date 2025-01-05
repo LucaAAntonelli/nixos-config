@@ -16,15 +16,16 @@
   };
   nixpkgs = {
     overlays = [
-      inputs.nur.overlay
+      inputs.nur.overlays.default
     ];
   };
 
   environment.systemPackages = with pkgs; [
     wget
     git
-    owncloud-client
+    nextcloud-client
     thunderbird
+    # mcpelauncher-ui-qt
   ];
 
   time.timeZone = "Europe/Zurich";

@@ -5,7 +5,7 @@
     ./hardware.nix
     ./xserver.nix
     ./network.nix
-    ./pipewire.nix
+    ./audio.nix
     ./program.nix
     ./security.nix
     ./services.nix

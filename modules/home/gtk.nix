@@ -1,11 +1,12 @@
 { pkgs, ... }:
 {
   fonts.fontconfig.enable = true;
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
-    pkgs.twemoji-color-font
-    pkgs.noto-fonts-emoji
-    pkgs.gruvbox-dark-icons-gtk
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.noto
+    twemoji-color-font
+    noto-fonts-emoji
+    gruvbox-dark-icons-gtk
   ];
 
   home.pointerCursor = {

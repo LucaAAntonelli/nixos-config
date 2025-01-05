@@ -53,7 +53,7 @@
       };
 
       git_branch = {
-        symbol = "";
+        symbol = "";
         style = "bg:color_aqua";
         format = "[[ $symbol $branch ](bold fg:color_fg0 bg:color_aqua)]($style)";
       };
