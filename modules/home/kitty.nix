@@ -6,7 +6,7 @@
     themeFile = "gruvbox-dark";
 
     font = {
-      name = "JetBrainsMono";
+      name = "JetBrainsMono Nerd Font";
       size = 13;
     };
 
