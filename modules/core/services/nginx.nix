@@ -9,9 +9,11 @@
         listen = [
           {
             addr = "192.168.1.212";
-            port = 8080;
+            port = 8888;
           }
         ];
+        # forceSSL = true;
+        # enableACME = true;
       };
 
       "bitwarden.${inputs.secrets.domain}" = {
