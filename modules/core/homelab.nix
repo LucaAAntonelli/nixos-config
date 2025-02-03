@@ -8,6 +8,8 @@
     ./services/nextcloud.nix
     ./services/vaultwarden.nix
     ./services/cloudflared.nix
+    ./services/minecraft.nix
+    ./services/sql.nix
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -24,7 +26,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
   };
 
@@ -35,9 +37,21 @@
 
   services.tailscale.enable = true;
 
-  security.acme = {
-    defaults.email = inputs.secrets.email;
-    acceptTerms = true;
+  security = {
+    acme = {
+      defaults.email = inputs.secrets.email;
+      acceptTerms = true;
+    };
+    sudo.extraRules = [
+    {
+      users = [ "luca" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ]; 
+    }];
   };
 
 # Enable automatic login for the user.
@@ -53,12 +67,12 @@
     enable = true;
     settings = {
       PermitRootLogin = "yes";
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
     };
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 443 2283 8080 8222 8888];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 2283 8080 8222 8888 1234];
  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

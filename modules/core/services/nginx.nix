@@ -2,20 +2,16 @@
 {
   services.nginx = {
     enable = true;
-    # recommendedGzipSettings = true;
 
     virtualHosts = {
-      "192.168.1.212" = {
+      "nextcloud.${inputs.secrets.domain}" = {
         listen = [
           {
             addr = "192.168.1.212";
             port = 8888;
           }
         ];
-        # forceSSL = true;
-        # enableACME = true;
       };
-
       "bitwarden.${inputs.secrets.domain}" = {
         enableACME = true;
         forceSSL = true;
