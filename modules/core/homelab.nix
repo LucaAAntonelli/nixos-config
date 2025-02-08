@@ -6,6 +6,7 @@
     ./services/immich.nix
     ./services/fail2ban.nix
     ./services/nextcloud.nix
+    ./services/onlyoffice.nix
     ./services/vaultwarden.nix
     ./services/cloudflared.nix
     ./services/minecraft.nix
@@ -72,7 +73,7 @@
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 443 2283 8080 8222 8888 1234];
+  networking.firewall.allowedTCPPorts = [ 22 80 180 443 1443 2283 8080 8222 8888 1234];
  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
