@@ -76,6 +76,15 @@
         settings.user_default_options.names = false;
       };
       crates.enable = true;
+      wrapping = {
+        enable = true;
+        autoLoad = true;
+        settings = {
+          auto_set_mode_filetype_allowlist = [
+            "markdown"
+          ];
+        };
+      };
     };
     extraPlugins = with pkgs.vimPlugins; [
       cmp-nvim-lsp
