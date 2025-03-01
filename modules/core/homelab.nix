@@ -34,7 +34,10 @@
   # Add zsh program here too
   programs.zsh.enable = true;
 
-  environment.systemPackages = [ pkgs.tailscale ];
+  environment.systemPackages = with pkgs; [ 
+    tailscale 
+    jdk8
+  ];
 
   services.tailscale.enable = true;
 
