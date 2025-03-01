@@ -1,31 +1,41 @@
-{ pkgs, lib, inputs, ... }:
-let
-  modpack = (pkgs.fetchPackwizModpack {
-    url = "https://github.com/Misterio77/Modpack/raw/0.2.9/pack.toml";
-    packHash = "sha256-7ZiGTMjLi60jE94lNIlAGpAMPOOuPdO5H+VhvE0LEU4=";
-  });
-in
+{inputs, lib, ... }:
 {
-  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
-
-  services.minecraft-servers = {
-    enable = true;
+  imports = [inputs.mms.module];
+  services.modded-minecraft-servers = {
     eula = true;
+    instances = {
+      divinejourney2 = {
+        enable = false; # disable for now
+        rsyncSSHKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFKjNIRdnej5xu7x68O7Yj5Svz4QZW7C60gCCDs/Hfni"];
 
-    # package = pkgs.minecraftServers.vanilla-1-12;
-    dataDir = "/var/lib/minecraft/server";
+        # Currently not used, but left here in case this changes
+        jvmOpts = lib.concatStringsSep " " [
+          "-XX:+UseG1GC"
+          "-XX:+ParallelRefProcEnabled"
+          "-XX:MaxGCPauseMillis=200"
+          "-XX:+UnlockExperimentalVMOptions"
+          "-XX:+DisableExplicitGC"
+          "-XX:+AlwaysPreTouch"
+          "-XX:G1NewSizePercent=40"
+          "-XX:G1MaxNewSizePercent=50"
+#          "-XX:G1HeapRegionSize=16M"
+          "-XX:G1ReservePercent=15"
+          "-XX:G1HeapWastePercent=5"
+          "-XX:G1MixedGCCountTarget=4"
+          "-XX:InitiatingHeapOccupancyPercent=20"
+          "-XX:G1MixedGCLiveThresholdPercent=90"
+          "-XX:G1RSetUpdatingPauseTimePercent=5"
+          "-XX:SurvivorRatio=32"
+          "-XX:+PerfDisableSharedMem"
+          "-XX:MaxTenuringThreshold=1"
+        ];
 
-    servers = {
-      cool-server = {
-        enable = true;
-        package = pkgs.fabricServers.fabric-1_18_2;
 
-        serverProperties = { };
-        whitelist = { };
-
-        symlinks = {
-          "mods" = "${modpack}/mods";
+        serverConfig = {
+          motd = "NixOS-hosted Divine Journey 2 server";
+          white-list = true;
+          max-players = 1;
+          allow-flight = true;
         };
       };
     };
