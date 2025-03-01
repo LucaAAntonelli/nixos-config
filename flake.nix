@@ -12,7 +12,8 @@
   
     nix-gaming.url = "github:fufexan/nix-gaming";
 
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    # nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    mms.url = "github:mkaito/nixos-modded-minecraft-servers";
   
     hyprland = {
       type = "git";
