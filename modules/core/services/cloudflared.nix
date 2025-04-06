@@ -1,8 +1,7 @@
-{inputs, username, ... }: 
+{inputs, ... }: 
 {
   services.cloudflared = {
     enable = true;
-    user = username;
     tunnels = {
       "mysecrettunnel" = {
         default = "http_status:404";
