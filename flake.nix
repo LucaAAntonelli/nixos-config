@@ -11,6 +11,9 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
   
     nix-gaming.url = "github:fufexan/nix-gaming";
+
+    # nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    mms.url = "github:mkaito/nixos-modded-minecraft-servers";
   
     hyprland = {
       type = "git";
