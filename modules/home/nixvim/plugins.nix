@@ -85,6 +85,8 @@
           ];
         };
       };
+      neogit.enable = true;
+      diffview.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       cmp-nvim-lsp
