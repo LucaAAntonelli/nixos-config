@@ -26,6 +26,7 @@
     nextcloud-client
     thunderbird
     # mcpelauncher-ui-qt
+    calibre
   ];
 
   time.timeZone = "Europe/Zurich";
