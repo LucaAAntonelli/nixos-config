@@ -11,6 +11,7 @@
     ./services/cloudflared.nix
     ./services/minecraft.nix
     ./services/sql.nix
+    ./calibre-web.nix
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
