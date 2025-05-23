@@ -11,7 +11,7 @@
     ./services/cloudflared.nix
     ./services/minecraft.nix
     ./services/sql.nix
-    ./calibre-web.nix
+    ./services/calibre-web.nix
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,6 +38,7 @@
   environment.systemPackages = with pkgs; [ 
     tailscale 
     jdk8
+    nextcloud-client
   ];
 
   services.tailscale.enable = true;
@@ -77,7 +78,7 @@
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 180 443 1443 2283 8080 8222 8888 1234];
+  networking.firewall.allowedTCPPorts = [ 22 80 180 443 1443 2283 8080 8083 8222 8888 1234];
  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
