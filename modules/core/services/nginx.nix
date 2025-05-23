@@ -22,8 +22,8 @@
       };
 
       "immich.${inputs.secrets.domain}" = {
-        enableACME = true;
-        forceSSL = true;
+        enableACME = false;
+        forceSSL = false;
         locations."/" = {
           proxyPass = "http://127.0.0.1:${toString config.services.immich.port}";
           proxyWebsockets = true;
