@@ -1,7 +1,7 @@
 {pkgs, ... }: 
   let
     calibre-web-with-kobo = pkgs.calibre-web.overridePythonAttrs (oldAttrs: {
-      dependencies = oldAttrs.dependencies ++ [ pkgs.python3Packages.jsonschema];
+      dependencies = oldAttrs.dependencies ++ [ pkgs.calibre-web.optional-dependencies.kobo];
       });
   in 
   {
