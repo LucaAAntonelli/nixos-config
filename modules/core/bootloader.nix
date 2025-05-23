@@ -7,6 +7,8 @@
     efiSupport = true;
     efiInstallAsRemovable = false;
     useOSProber = false;
+    # Add Windows boot entry and make it appear before NixOS
+    extraEntriesBeforeNixOS = true;
     extraEntries = if host == "desktop" then ''
       menuentry 'Windows Boot Manager (on /dev/sdb2)' --class windows --class os $menuentry_id_option 'osprober-efi-10A6-35AF' {
 	      insmod part_gpt
