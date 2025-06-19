@@ -1,4 +1,4 @@
-{...}:
+{lib, ...}:
 {
   programs.zsh = {
     enable = true;
@@ -9,7 +9,7 @@
       enable = true;
       plugins = [ "git" "fzf" "tmux" "bgnotify" ];
     };
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
       eval "$(direnv hook zsh)"
