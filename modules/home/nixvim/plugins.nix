@@ -29,6 +29,7 @@
       which-key.enable = true;     
       lsp = {
         enable = true;
+        inlayHints = true;
         servers = {
           lua_ls.enable = true;
           nixd.enable = true; # nix LSP
