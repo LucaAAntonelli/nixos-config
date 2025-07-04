@@ -2,16 +2,16 @@
 {
   imports = [
     ./sops.nix
-    ./services/nginx.nix
-    ./services/immich.nix
-    ./services/fail2ban.nix
-    ./services/nextcloud.nix
-    ./services/onlyoffice.nix
-    ./services/vaultwarden.nix
-    ./services/cloudflared.nix
-    ./services/minecraft.nix
-    ./services/sql.nix
-    ./services/calibre-web.nix
+    ../services/nginx.nix
+    ../services/immich.nix
+    ../services/fail2ban.nix
+    ../services/nextcloud.nix
+    ../services/onlyoffice.nix
+    ../services/vaultwarden.nix
+    ../services/cloudflared.nix
+    ../services/minecraft.nix
+    ../services/sql.nix
+    ../services/calibre-web.nix
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
