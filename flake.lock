@@ -659,21 +659,6 @@
         "type": "github"
       }
     },
-    "lazyvim-config": {
-      "locked": {
-        "lastModified": 1751711330,
-        "narHash": "sha256-To+2Sefcj7nWh7KPmXm7vsF50WSfJmhz6pF538EVkVA=",
-        "owner": "LucaAAntonelli",
-        "repo": "lazyvim-config",
-        "rev": "c0b3c69b3566ae9097b2d88e76d6782ec2658a96",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LucaAAntonelli",
-        "repo": "lazyvim-config",
-        "type": "github"
-      }
-    },
     "lowdown-src": {
       "flake": false,
       "locked": {
@@ -1038,7 +1023,6 @@
         "hypr-contrib": "hypr-contrib",
         "hyprland": "hyprland",
         "hyprpicker": "hyprpicker",
-        "lazyvim-config": "lazyvim-config",
         "mms": "mms",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_8",

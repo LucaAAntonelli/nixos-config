@@ -41,10 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lazyvim-config = {
-      url = "github:LucaAAntonelli/lazyvim-config";
-    };
-
     # IMPORTANT: This only works if the command sudo ssh -T git@github.com 
     # can be executed (root needs to have ssh access to the private repo!)
     # This can be achieved by copying the ~/.ssh directory to /root/.ssh
