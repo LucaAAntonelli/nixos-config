@@ -27,9 +27,6 @@
     thunderbird
     # mcpelauncher-ui-qt
     calibre
-    rustup
-    gcc
-    protobuf
   ];
 
   time.timeZone = "Europe/Zurich";
