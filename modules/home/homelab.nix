@@ -2,7 +2,7 @@
 {
   imports = [
     ./bat.nix
-    ./nixvim
+    ./nvim.nix
     ./tmux.nix
     ./starship.nix
     ./zsh.nix
