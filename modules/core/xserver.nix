@@ -18,8 +18,6 @@
       # };
     };
   };
-  # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
   # Set keyboard layout to Swiss German QWERTZ
   console.keyMap = "sg";
