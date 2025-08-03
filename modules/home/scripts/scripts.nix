@@ -20,7 +20,7 @@
  
   connect-vpn = pkgs.writeScriptBin "connect-vpn" (builtins.readFile ./scripts/connect_vpn.sh);
 
-  fzf-diff = pkgs.writeShellScriptBin "fzf-diff" (builtins.readFile ./scripts/fzf_diff.sh);
+  fzfdiff = pkgs.writeShellScriptBin "fzfdiff" (builtins.readFile ./scripts/fzfdiff.sh);
 
 in {
   home.packages = with pkgs; [
@@ -45,7 +45,7 @@ in {
 
     connect-vpn
 
-    fzf-diff
+    fzfdiff
 
   ];
 }
