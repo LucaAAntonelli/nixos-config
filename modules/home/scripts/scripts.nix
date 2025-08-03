@@ -20,6 +20,8 @@
  
   connect-vpn = pkgs.writeScriptBin "connect-vpn" (builtins.readFile ./scripts/connect_vpn.sh);
 
+  fzf-diff = pkgs.writeShellScriptBin "fzf-diff" (builtins.readFile ./scripts/fzf_diff.sh);
+
 in {
   home.packages = with pkgs; [
     wall-change
@@ -42,6 +44,8 @@ in {
     show-keybinds
 
     connect-vpn
+
+    fzf-diff
 
   ];
 }
