@@ -1,5 +1,2 @@
 #!/usr/bin/env bash
-mynewdiff() {
-  preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview
-}
+git diff $@ --name-only | fzf -m --ansi --preview "git diff $@ --color=always -- {-1}"
