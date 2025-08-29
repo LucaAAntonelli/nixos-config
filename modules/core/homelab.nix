@@ -9,7 +9,6 @@
     ../services/vaultwarden.nix
     ../services/cloudflared.nix
     ../services/minecraft.nix
-    ../services/sql.nix
     ../services/calibre-web.nix
     ../services/audiobookshelf.nix
     ../services/syncthing.nix
