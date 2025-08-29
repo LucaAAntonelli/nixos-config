@@ -1051,11 +1051,11 @@
     },
     "secrets": {
       "locked": {
-        "lastModified": 1735730456,
-        "narHash": "sha256-K3DUsfRyxrSPao3bowsRUcPvpcFZ7tkxmCmfFRk5BMg=",
+        "lastModified": 1756490470,
+        "narHash": "sha256-afC/o9q5gyHnktg9+J7iObqSzn4EVGyzF1T2YGQOAas=",
         "ref": "main",
-        "rev": "12ad62d706a1f47030984c40b0ad00b8cfb80cf9",
-        "revCount": 16,
+        "rev": "19577d610a9747e09929100ae14960bc3b092855",
+        "revCount": 18,
         "type": "git",
         "url": "ssh://git@github.com/LucaAAntonelli/nix-secrets.git"
       },
