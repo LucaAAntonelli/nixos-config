@@ -1,5 +1,4 @@
-{ pkgs, host, username, inputs, ... }: 
-{
+{ pkgs, host, username, inputs, ... }: {
   imports = [
     ./sops.nix
     ../services/nginx.nix
@@ -13,11 +12,12 @@
     ../services/sql.nix
     ../services/calibre-web.nix
     ../services/audiobookshelf.nix
+    ../services/syncthing.nix
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking= {
+  networking = {
     hostName = "${host}";
     networkmanager.enable = true;
   };
@@ -29,18 +29,14 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
   # Add zsh program here too
   programs.zsh.enable = true;
 
-  environment.systemPackages = with pkgs; [ 
-    tailscale 
-    jdk8
-    nextcloud-client
-  ];
+  environment.systemPackages = with pkgs; [ tailscale jdk8 nextcloud-client ];
 
   services.tailscale.enable = true;
 
@@ -49,26 +45,23 @@
       defaults.email = inputs.secrets.email;
       acceptTerms = true;
     };
-    sudo.extraRules = [
-    {
+    sudo.extraRules = [{
       users = [ "luca" ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ]; 
+      commands = [{
+        command = "ALL";
+        options = [ "NOPASSWD" ];
+      }];
     }];
   };
 
-# Enable automatic login for the user.
+  # Enable automatic login for the user.
   services.getty.autologinUser = username;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Enable experimental features
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.openssh = {
     enable = true;
@@ -79,8 +72,9 @@
     allowSFTP = true;
   };
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 180 443 1443 2283 8080 8083 8084 8222 8888 1234];
- 
+  networking.firewall.allowedTCPPorts =
+    [ 22 80 180 443 1443 2283 8080 8083 8084 8222 8888 1234 ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
