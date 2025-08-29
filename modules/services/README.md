@@ -29,12 +29,10 @@ In order to allow editing files on Nextcloud in the web interface (useful for ed
 4. Go to Nextcloud's web interface, navigate to Administration Settings > OnlyOffice and paste the copied string
 
 So far, it seems like it can happen that this token is reset when the docker container unexpectedly shuts down, i.e., when the server crashes and needs to be manually rebooted. 
+Update August 2025: I've finally added a predefined JWT to my secrets and added it to the OnlyOffice container via env variable. This ensures that when the container is restarted, we get the same JWT again, so I shouldn't need to udpate it in the NextCloud web interface anymore. 
 
 ## nginx
 nginx is the proxy service I use to act as the middle man between my services and the outside (or rather, Cloudflare Tunnel). 
-
-## PostgreSQL
-This is my preferred SQL database system. It's running as a docker container because the Immich service uses a postgres database that runs locally, which led to conflicts when setting up a second one. This way, there's definitely no unwanted interactions between the two. It is only used for some private coding projects. 
 
 ## Vaultwarden
 Vaultwarden is my open-source password manager for now. 
