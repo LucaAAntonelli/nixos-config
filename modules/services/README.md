@@ -16,7 +16,8 @@ There is currently one single Minecraft server being hosted, which is for the Di
 2. Extract all files and check if there is a shell script included that can be used in order to start the server
 3. If yes, rename it to `start.sh` and make it executable. If not, create one with roughly the following content: `exec java -server forge-{version_included_in_zip} nogui` with potential Java arguments
 4. Create a module with a name under `services.modded-minecraft-servers.instances`
-5. After that, the server will be started automoatically as a systemd service
+5. This service will create a folder under `/var/lib/mc-<name>`. Put all server files into that folder.
+6. After that, the server will be started automoatically as a systemd service
 
 ## Nextcloud
 Nextcloud is my go-to choice of private file sync and backup service. I use it as a replacement for stuff like OneDrive or Google Drive. The setup includes OnlyOffice.
