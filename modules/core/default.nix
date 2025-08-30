@@ -17,5 +17,6 @@
     ./nix-helper.nix
     ./tailscale-client.nix
     ./sops.nix
+    ../services
   ];
 }
