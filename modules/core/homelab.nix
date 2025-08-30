@@ -1,17 +1,7 @@
 { pkgs, host, username, inputs, ... }: {
   imports = [
-    ./sops.nix
-    ../services/nginx.nix
-    ../services/immich.nix
-    ../services/fail2ban.nix
-    ../services/nextcloud.nix
-    ../services/onlyoffice.nix
-    ../services/vaultwarden.nix
-    ../services/cloudflared.nix
-    ../services/minecraft.nix
-    ../services/calibre-web.nix
-    ../services/audiobookshelf.nix
-    ../services/syncthing.nix
+    ./sops.nix # secrets management
+    ../services/homelab.nix # definitions of systemd services for homelab
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
