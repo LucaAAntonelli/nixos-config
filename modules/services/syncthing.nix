@@ -13,7 +13,6 @@ in {
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
-    extraFlags = [ "--no-default-folder" ];
     user = "luca";
     configDir =
       "/home/luca/.config/syncthing"; # set to somewhere in home directory to have access with user
